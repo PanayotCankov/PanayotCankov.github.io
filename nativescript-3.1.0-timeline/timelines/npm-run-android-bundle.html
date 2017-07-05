@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profiling</title>
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.trace {
+    position: absolute;
+    border: 1px solid black;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #DDD;
+    cursor: default;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.trace.Modules {
+    background-color: #BFF;
+}
+.trace.Runtime {
+    background-color: #FFB;
+}
+.trace:hover {
+    background-color: #FFF;
+    border-color: orange;
+    z-index: 1;
+    box-shadow: 0px 1px 5px black;
+}
+</style>
+</head>
+<body>
+  <script>
+var timeline = [{"domain":"Runtime","name":"LoadModule /data/data/com.ladeezfirstmedia.practicebuddy/files/app/vendor.js","from":1499324240153.025,"to":1499324240900.564},{"domain":"Runtime","name":"RequireCallback ./vendor","from":1499324240152.821,"to":1499324240900.65},{"domain":"Runtime","name":"Compile, no cache","from":1499324240911.721,"to":1499324240996.341},{"domain":"Runtime","name":"LoadScript /data/data/com.ladeezfirstmedia.practicebuddy/files/app/bundle.js","from":1499324240901.053,"to":1499324240996.403},{"domain":"Modules","name":"r.createNavigationEntry","from":1499324241200.817,"to":1499324241201.109},{"domain":"Modules","name":"r.bootstrapApp","from":1499324241200.6882,"to":1499324241220.082},{"domain":"Modules","name":"r.bootstrapModuleFactory","from":1499324241200.594,"to":1499324241220.547},{"domain":"Runtime","name":"LoadModule /data/data/com.ladeezfirstmedia.practicebuddy/files/app/bundle.js","from":1499324240901.03,"to":1499324241220.662},{"domain":"Runtime","name":"RequireCallback ./bundle","from":1499324240900.68,"to":1499324241220.703},{"domain":"Runtime","name":"LoadModule /data/data/com.ladeezfirstmedia.practicebuddy/files/app/starter.js","from":1499324240152.608,"to":1499324241220.723},{"domain":"Runtime","name":"RequireCallback /data/data/com.ladeezfirstmedia.practicebuddy/files/app/./starter.js","from":1499324240152.506,"to":1499324241220.745},{"domain":"Runtime","name":"MarkReachableObjects: com.tns.gen.android.app.Application_ActivityLifecycleCallbacks","from":1499324241236.874,"to":1499324241626.869},{"domain":"Runtime","name":"void tns::ModuleInternal::Load(const string &)","from":1499324240152.438,"to":1499324241646.193},{"domain":"Runtime","name":"Runtime.run","from":1499324240151,"to":1499324241646},{"domain":"Runtime","name":"NaitveScriptApplication.onCreate","from":1499324239775,"to":1499324241646},{"domain":"Runtime","name":"Materizlizing class: android/content/Intent","from":1499324241653.277,"to":1499324241680.489},{"domain":"Modules","name":"t.readTextSync","from":1499324241817.346,"to":1499324241821.824},{"domain":"Modules","name":"\"style-scope\".loadCss","from":1499324241811.466,"to":1499324241838.7761},{"domain":"Modules","name":"\"style-scope\".loadCssOnLaunch","from":1499324241811.262,"to":1499324241839.4292},{"domain":"Runtime","name":"Materizlizing class: android/view/View","from":1499324241895.405,"to":1499324241917.484},{"domain":"Runtime","name":"Materizlizing class: android/view/ViewGroup","from":1499324241895.389,"to":1499324241921.226},{"domain":"Runtime","name":"Materizlizing class: android/widget/FrameLayout","from":1499324241895.367,"to":1499324241921.691},{"domain":"Runtime","name":"Materizlizing class: com/android/internal/policy/DecorView","from":1499324241895.305,"to":1499324241922.451},{"domain":"Modules","name":"onActivityCreated","from":1499324241841.048,"to":1499324241925.659},{"domain":"Modules","name":"t._setupUI","from":1499324241925.844,"to":1499324241931.716},{"domain":"Modules","name":"e._createSelectors","from":1499324241935.585,"to":1499324241937.7988},{"domain":"Modules","name":"t.applyCssState","from":1499324241943.589,"to":1499324241948.258},{"domain":"Modules","name":"t._setCssState","from":1499324241943.144,"to":1499324241948.397},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324241940.385,"to":1499324241948.456},{"domain":"Modules","name":"t._setStyleScope","from":1499324241940.299,"to":1499324241948.6028},{"domain":"Modules","name":"t._addView","from":1499324241939.738,"to":1499324241949.156},{"domain":"Modules","name":"t.applyCssState","from":1499324241951.978,"to":1499324241954.724},{"domain":"Modules","name":"t._setCssState","from":1499324241951.742,"to":1499324241954.8171},{"domain":"Modules","name":"t.applyCssState","from":1499324241955.309,"to":1499324241956.4329},{"domain":"Modules","name":"t._setCssState","from":1499324241955.036,"to":1499324241956.521},{"domain":"Modules","name":"e.onCreate","from":1499324241652.765,"to":1499324241957.538},{"domain":"Modules","name":"onActivityStarted","from":1499324241959.019,"to":1499324242084.485},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242088.073,"to":1499324242089.933},{"domain":"Modules","name":"t.onLoaded","from":1499324242086.118,"to":1499324242092.213},{"domain":"Modules","name":"View.onLoaded","from":1499324242085.636,"to":1499324242093.543},{"domain":"Modules","name":"e.onStart","from":1499324241958.721,"to":1499324242093.7148},{"domain":"Modules","name":"nativescript-angular/platform-common.initHandler","from":1499324242102.929,"to":1499324242141.3289},{"domain":"Modules","name":"t._navigateCore","from":1499324242141.573,"to":1499324242163.775},{"domain":"Modules","name":"onActivityResumed","from":1499324242099.497,"to":1499324242164.348},{"domain":"Modules","name":"t.selectRootElement","from":1499324242178.6099,"to":1499324242178.7131},{"domain":"Modules","name":"t.createElement","from":1499324242185.737,"to":1499324242188.8179},{"domain":"Modules","name":"t.applyCssState","from":1499324242191.9832,"to":1499324242192.352},{"domain":"Modules","name":"t._setCssState","from":1499324242191.631,"to":1499324242192.5188},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242191.341,"to":1499324242192.585},{"domain":"Modules","name":"t._setStyleScope","from":1499324242191.296,"to":1499324242192.8682},{"domain":"Modules","name":"t._addView","from":1499324242191.0332,"to":1499324242193.6472},{"domain":"Modules","name":"t.appendChild","from":1499324242189.835,"to":1499324242193.7988},{"domain":"Modules","name":"t.setAttribute","from":1499324242197.469,"to":1499324242199.4539},{"domain":"Modules","name":"nativescript-angular/platform-common.postBootstrapAction","from":1499324242244.09,"to":1499324242244.223},{"domain":"Modules","name":"t.createElement","from":1499324242256.7092,"to":1499324242256.907},{"domain":"Modules","name":"\"style-scope\".onCssChanged","from":1499324242261.881,"to":1499324242267.489},{"domain":"Modules","name":"\"renderer\".addStyleToCss","from":1499324242261.7239,"to":1499324242267.729},{"domain":"Modules","name":"r.addStyles","from":1499324242261.355,"to":1499324242267.9292},{"domain":"Modules","name":"t.setAttribute","from":1499324242268.079,"to":1499324242269.001},{"domain":"Modules","name":"t.createElement","from":1499324242270.415,"to":1499324242270.696},{"domain":"Modules","name":"t.setAttribute","from":1499324242270.8108,"to":1499324242271.33},{"domain":"Modules","name":"t.appendChild","from":1499324242271.6082,"to":1499324242271.714},{"domain":"Modules","name":"t.setAttribute","from":1499324242271.846,"to":1499324242271.9292},{"domain":"Modules","name":"t.setAttribute","from":1499324242272.0461,"to":1499324242272.4968},{"domain":"Modules","name":"t.applyCssState","from":1499324242273.8088,"to":1499324242274.124},{"domain":"Modules","name":"t._setCssState","from":1499324242273.7769,"to":1499324242274.218},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242273.7668,"to":1499324242274.269},{"domain":"Modules","name":"t._setStyleScope","from":1499324242273.727,"to":1499324242274.334},{"domain":"Modules","name":"e._createSelectors","from":1499324242274.947,"to":1499324242275.584},{"domain":"Modules","name":"t.applyCssState","from":1499324242277.649,"to":1499324242278.636},{"domain":"Modules","name":"t._setCssState","from":1499324242277.037,"to":1499324242278.746},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242274.9219,"to":1499324242278.812},{"domain":"Modules","name":"t._setStyleScope","from":1499324242274.893,"to":1499324242278.876},{"domain":"Modules","name":"t._addView","from":1499324242274.806,"to":1499324242279.311},{"domain":"Modules","name":"t.createText","from":1499324242279.761,"to":1499324242279.942},{"domain":"Modules","name":"t.appendChild","from":1499324242280.191,"to":1499324242280.236},{"domain":"Modules","name":"t.createElement","from":1499324242280.326,"to":1499324242283.791},{"domain":"Modules","name":"t.setAttribute","from":1499324242283.9192,"to":1499324242284.5042},{"domain":"Modules","name":"t._addView","from":1499324242284.8252,"to":1499324242284.995},{"domain":"Modules","name":"t.appendChild","from":1499324242284.623,"to":1499324242285.1572},{"domain":"Modules","name":"t.createText","from":1499324242285.262,"to":1499324242285.282},{"domain":"Modules","name":"t.appendChild","from":1499324242285.3892,"to":1499324242285.449},{"domain":"Modules","name":"t.createElement","from":1499324242285.523,"to":1499324242287.44},{"domain":"Modules","name":"t.setAttribute","from":1499324242287.539,"to":1499324242288.101},{"domain":"Modules","name":"t._addView","from":1499324242288.358,"to":1499324242288.661},{"domain":"Modules","name":"t.appendChild","from":1499324242288.235,"to":1499324242288.765},{"domain":"Modules","name":"t.createText","from":1499324242288.8262,"to":1499324242288.8298},{"domain":"Modules","name":"t.appendChild","from":1499324242288.9119,"to":1499324242288.9521},{"domain":"Modules","name":"t.createElement","from":1499324242289.011,"to":1499324242293.2239},{"domain":"Modules","name":"t.setAttribute","from":1499324242293.3398,"to":1499324242293.8828},{"domain":"Modules","name":"t._addView","from":1499324242294.109,"to":1499324242294.27},{"domain":"Modules","name":"t.appendChild","from":1499324242293.993,"to":1499324242294.402},{"domain":"Modules","name":"t.setAttribute","from":1499324242294.487,"to":1499324242294.7688},{"domain":"Modules","name":"t.setAttribute","from":1499324242294.8638,"to":1499324242294.998},{"domain":"Modules","name":"t.setAttribute","from":1499324242295.07,"to":1499324242295.2441},{"domain":"Modules","name":"t.createText","from":1499324242295.313,"to":1499324242295.317},{"domain":"Modules","name":"t.appendChild","from":1499324242295.379,"to":1499324242295.401},{"domain":"Modules","name":"t.createElement","from":1499324242295.462,"to":1499324242297.893},{"domain":"Modules","name":"t.setAttribute","from":1499324242297.977,"to":1499324242298.591},{"domain":"Modules","name":"t._addView","from":1499324242298.788,"to":1499324242298.875},{"domain":"Modules","name":"t.appendChild","from":1499324242298.7031,"to":1499324242298.931},{"domain":"Modules","name":"t.setAttribute","from":1499324242299.0342,"to":1499324242299.2058},{"domain":"Modules","name":"t.setAttribute","from":1499324242299.303,"to":1499324242299.5898},{"domain":"Modules","name":"t.setAttribute","from":1499324242299.6968,"to":1499324242299.832},{"domain":"Modules","name":"t.setAttribute","from":1499324242299.906,"to":1499324242300.0278},{"domain":"Modules","name":"t.listen","from":1499324242300.469,"to":1499324242300.779},{"domain":"Modules","name":"t.listen","from":1499324242300.947,"to":1499324242301.803},{"domain":"Modules","name":"t.listen","from":1499324242301.896,"to":1499324242301.946},{"domain":"Modules","name":"t.createText","from":1499324242305.1719,"to":1499324242305.179},{"domain":"Modules","name":"t.appendChild","from":1499324242305.2979,"to":1499324242305.331},{"domain":"Modules","name":"t.createElement","from":1499324242305.3938,"to":1499324242305.441},{"domain":"Modules","name":"t.setAttribute","from":1499324242305.508,"to":1499324242305.566},{"domain":"Modules","name":"t._addView","from":1499324242305.6682,"to":1499324242305.7012},{"domain":"Modules","name":"t.appendChild","from":1499324242305.634,"to":1499324242305.761},{"domain":"Modules","name":"t.setAttribute","from":1499324242305.854,"to":1499324242305.971},{"domain":"Modules","name":"t.setAttribute","from":1499324242306.059,"to":1499324242306.197},{"domain":"Modules","name":"t.listen","from":1499324242306.502,"to":1499324242306.561},{"domain":"Modules","name":"t.listen","from":1499324242306.6428,"to":1499324242306.954},{"domain":"Modules","name":"t.listen","from":1499324242307.02,"to":1499324242307.039},{"domain":"Modules","name":"t.createText","from":1499324242308.342,"to":1499324242308.348},{"domain":"Modules","name":"t.appendChild","from":1499324242308.437,"to":1499324242308.468},{"domain":"Modules","name":"t.createElement","from":1499324242308.533,"to":1499324242311.434},{"domain":"Modules","name":"t.setAttribute","from":1499324242311.5242,"to":1499324242312.126},{"domain":"Modules","name":"t._addView","from":1499324242312.322,"to":1499324242312.4128},{"domain":"Modules","name":"t.appendChild","from":1499324242312.247,"to":1499324242312.4722},{"domain":"Modules","name":"t.applyCssState","from":1499324242314.294,"to":1499324242314.616},{"domain":"Modules","name":"t._setCssState","from":1499324242314.005,"to":1499324242314.846},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242313.973,"to":1499324242314.911},{"domain":"Modules","name":"t.setAttribute","from":1499324242312.562,"to":1499324242315.113},{"domain":"Modules","name":"t.listen","from":1499324242315.1921,"to":1499324242315.362},{"domain":"Modules","name":"t.createText","from":1499324242315.4292,"to":1499324242315.436},{"domain":"Modules","name":"t.appendChild","from":1499324242315.5378,"to":1499324242315.573},{"domain":"Modules","name":"t.createElement","from":1499324242315.642,"to":1499324242315.691},{"domain":"Modules","name":"t.setAttribute","from":1499324242315.75,"to":1499324242315.807},{"domain":"Modules","name":"t._addView","from":1499324242315.9092,"to":1499324242315.939},{"domain":"Modules","name":"t.appendChild","from":1499324242315.874,"to":1499324242315.998},{"domain":"Modules","name":"t.applyCssState","from":1499324242316.608,"to":1499324242316.672},{"domain":"Modules","name":"t._setCssState","from":1499324242316.52,"to":1499324242316.752},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242316.516,"to":1499324242316.8},{"domain":"Modules","name":"t.setAttribute","from":1499324242316.051,"to":1499324242316.9138},{"domain":"Modules","name":"t.listen","from":1499324242316.9731,"to":1499324242317.046},{"domain":"Modules","name":"t.createText","from":1499324242317.108,"to":1499324242317.113},{"domain":"Modules","name":"t.appendChild","from":1499324242317.176,"to":1499324242317.201},{"domain":"Modules","name":"t.createElement","from":1499324242317.264,"to":1499324242317.291},{"domain":"Modules","name":"t.setAttribute","from":1499324242317.3389,"to":1499324242317.386},{"domain":"Modules","name":"t._addView","from":1499324242317.488,"to":1499324242317.512},{"domain":"Modules","name":"t.appendChild","from":1499324242317.458,"to":1499324242317.573},{"domain":"Modules","name":"t.applyCssState","from":1499324242317.951,"to":1499324242317.963},{"domain":"Modules","name":"t._setCssState","from":1499324242317.946,"to":1499324242318.041},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242317.944,"to":1499324242318.0952},{"domain":"Modules","name":"t.setAttribute","from":1499324242317.8162,"to":1499324242318.1519},{"domain":"Modules","name":"t.setAttribute","from":1499324242318.239,"to":1499324242318.391},{"domain":"Modules","name":"t.setAttribute","from":1499324242318.47,"to":1499324242318.582},{"domain":"Modules","name":"t.listen","from":1499324242318.6519,"to":1499324242318.8008},{"domain":"Modules","name":"t.createText","from":1499324242318.86,"to":1499324242318.865},{"domain":"Modules","name":"t.appendChild","from":1499324242318.934,"to":1499324242318.958},{"domain":"Modules","name":"t.createText","from":1499324242319.009,"to":1499324242319.0132},{"domain":"Modules","name":"t.appendChild","from":1499324242319.075,"to":1499324242319.115},{"domain":"Modules","name":"t.createText","from":1499324242319.1748,"to":1499324242319.178},{"domain":"Modules","name":"t.appendChild","from":1499324242319.2478,"to":1499324242319.273},{"domain":"Modules","name":"t.parentNode","from":1499324242320.844,"to":1499324242320.9001},{"domain":"Modules","name":"t.nextSibling","from":1499324242321.044,"to":1499324242321.4358},{"domain":"Modules","name":"t.applyCssState","from":1499324242322.875,"to":1499324242323.005},{"domain":"Modules","name":"t._setCssState","from":1499324242322.854,"to":1499324242323.0872},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242322.837,"to":1499324242323.135},{"domain":"Modules","name":"t._setStyleScope","from":1499324242322.669,"to":1499324242323.19},{"domain":"Modules","name":"t.applyCssState","from":1499324242324.2,"to":1499324242330.3171},{"domain":"Modules","name":"t._setCssState","from":1499324242323.9192,"to":1499324242330.442},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242323.657,"to":1499324242330.499},{"domain":"Modules","name":"t.applyCssState","from":1499324242331.348,"to":1499324242331.776},{"domain":"Modules","name":"t._setCssState","from":1499324242330.905,"to":1499324242331.872},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242330.721,"to":1499324242331.9329},{"domain":"Modules","name":"t.applyCssState","from":1499324242332.405,"to":1499324242332.541},{"domain":"Modules","name":"t._setCssState","from":1499324242332.247,"to":1499324242332.6138},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242332.099,"to":1499324242332.662},{"domain":"Modules","name":"t.applyCssState","from":1499324242333.887,"to":1499324242335.041},{"domain":"Modules","name":"t._setCssState","from":1499324242333.692,"to":1499324242335.126},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242332.811,"to":1499324242335.1838},{"domain":"Modules","name":"t._setStyleScope","from":1499324242332.771,"to":1499324242335.2378},{"domain":"Modules","name":"t.applyCssState","from":1499324242335.785,"to":1499324242340.0598},{"domain":"Modules","name":"t._setCssState","from":1499324242335.6218,"to":1499324242340.159},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242335.388,"to":1499324242340.223},{"domain":"Modules","name":"t._setStyleScope","from":1499324242335.343,"to":1499324242340.289},{"domain":"Modules","name":"t.applyCssState","from":1499324242340.701,"to":1499324242342.182},{"domain":"Modules","name":"t._setCssState","from":1499324242340.558,"to":1499324242342.259},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242340.394,"to":1499324242342.323},{"domain":"Modules","name":"t._setStyleScope","from":1499324242340.359,"to":1499324242342.4},{"domain":"Modules","name":"t.applyCssState","from":1499324242343.063,"to":1499324242346.0889},{"domain":"Modules","name":"t._setCssState","from":1499324242342.973,"to":1499324242346.1938},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242342.514,"to":1499324242346.339},{"domain":"Modules","name":"t._setStyleScope","from":1499324242342.477,"to":1499324242346.409},{"domain":"Modules","name":"t.applyCssState","from":1499324242346.637,"to":1499324242347.1099},{"domain":"Modules","name":"t._setCssState","from":1499324242346.595,"to":1499324242347.179},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242346.5012,"to":1499324242347.2341},{"domain":"Modules","name":"t._setStyleScope","from":1499324242346.497,"to":1499324242347.283},{"domain":"Modules","name":"t.applyCssState","from":1499324242347.613,"to":1499324242348.705},{"domain":"Modules","name":"t._setCssState","from":1499324242347.536,"to":1499324242348.775},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242347.382,"to":1499324242348.833},{"domain":"Modules","name":"t._setStyleScope","from":1499324242347.34,"to":1499324242348.883},{"domain":"Modules","name":"t._setStyleScope","from":1499324242332.0588,"to":1499324242348.9438},{"domain":"Modules","name":"t._setStyleScope","from":1499324242330.667,"to":1499324242348.989},{"domain":"Modules","name":"t._setStyleScope","from":1499324242323.625,"to":1499324242349.038},{"domain":"Modules","name":"t._addView","from":1499324242323.575,"to":1499324242349.771},{"domain":"Modules","name":"t.insertBefore","from":1499324242322.411,"to":1499324242349.8628},{"domain":"Modules","name":"t.setAttribute","from":1499324242355.799,"to":1499324242355.911},{"domain":"Modules","name":"t.setAttribute","from":1499324242357.185,"to":1499324242357.3362},{"domain":"Modules","name":"t.applyCssState","from":1499324242359.404,"to":1499324242361.509},{"domain":"Modules","name":"t._setCssState","from":1499324242359.021,"to":1499324242361.632},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242358.884,"to":1499324242361.688},{"domain":"Modules","name":"t.applyCssState","from":1499324242362.107,"to":1499324242362.459},{"domain":"Modules","name":"t._setCssState","from":1499324242361.963,"to":1499324242362.53},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242361.854,"to":1499324242362.592},{"domain":"Modules","name":"t.applyCssState","from":1499324242363.029,"to":1499324242364.597},{"domain":"Modules","name":"t._setCssState","from":1499324242362.83,"to":1499324242364.678},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242362.697,"to":1499324242364.727},{"domain":"Modules","name":"t.applyCssState","from":1499324242364.94,"to":1499324242365.676},{"domain":"Modules","name":"t._setCssState","from":1499324242364.8682,"to":1499324242365.741},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242364.795,"to":1499324242365.7961},{"domain":"Modules","name":"t.applyCssState","from":1499324242366.108,"to":1499324242368.3782},{"domain":"Modules","name":"t._setCssState","from":1499324242365.98,"to":1499324242368.496},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242365.861,"to":1499324242368.5498},{"domain":"Modules","name":"t.applyCssState","from":1499324242368.801,"to":1499324242369.239},{"domain":"Modules","name":"t._setCssState","from":1499324242368.727,"to":1499324242369.3052},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242368.634,"to":1499324242369.3591},{"domain":"Modules","name":"t.applyCssState","from":1499324242369.602,"to":1499324242370.105},{"domain":"Modules","name":"t._setCssState","from":1499324242369.5051,"to":1499324242370.1838},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242369.418,"to":1499324242370.2332},{"domain":"Modules","name":"t.setProperty","from":1499324242358.593,"to":1499324242370.3308},{"domain":"Modules","name":"t.applyCssState","from":1499324242372.008,"to":1499324242373.003},{"domain":"Modules","name":"t._setCssState","from":1499324242371.9219,"to":1499324242373.119},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242371.8452,"to":1499324242373.171},{"domain":"Modules","name":"t.addClass","from":1499324242371.518,"to":1499324242373.367},{"domain":"Modules","name":"t.removeClass","from":1499324242373.565,"to":1499324242373.96},{"domain":"Modules","name":"t.applyCssState","from":1499324242374.364,"to":1499324242376.021},{"domain":"Modules","name":"t._setCssState","from":1499324242374.2788,"to":1499324242376.131},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242374.196,"to":1499324242376.195},{"domain":"Modules","name":"t.addClass","from":1499324242374.1062,"to":1499324242376.3892},{"domain":"Modules","name":"t.removeClass","from":1499324242376.576,"to":1499324242376.67},{"domain":"Modules","name":"t.applyCssState","from":1499324242377.01,"to":1499324242377.706},{"domain":"Modules","name":"t._setCssState","from":1499324242376.9138,"to":1499324242377.7852},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242376.828,"to":1499324242377.8381},{"domain":"Modules","name":"t.addClass","from":1499324242376.77,"to":1499324242377.902},{"domain":"Modules","name":"t.removeClass","from":1499324242377.987,"to":1499324242378.04},{"domain":"Modules","name":"t.removeClass","from":1499324242378.124,"to":1499324242378.154},{"domain":"Modules","name":"t.applyCssState","from":1499324242378.6848,"to":1499324242379.815},{"domain":"Modules","name":"t._setCssState","from":1499324242378.614,"to":1499324242379.906},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242378.542,"to":1499324242379.9612},{"domain":"Modules","name":"t.addClass","from":1499324242378.481,"to":1499324242380.0242},{"domain":"Modules","name":"t.removeClass","from":1499324242380.105,"to":1499324242380.144},{"domain":"Modules","name":"t.applyCssState","from":1499324242380.606,"to":1499324242381.265},{"domain":"Modules","name":"t._setCssState","from":1499324242380.531,"to":1499324242381.333},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242380.438,"to":1499324242381.386},{"domain":"Modules","name":"t.addClass","from":1499324242380.3699,"to":1499324242381.449},{"domain":"Modules","name":"t.removeClass","from":1499324242381.53,"to":1499324242381.57},{"domain":"Modules","name":"t.applyCssState","from":1499324242381.812,"to":1499324242382.431},{"domain":"Modules","name":"t._setCssState","from":1499324242381.7458,"to":1499324242382.497},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242381.674,"to":1499324242382.545},{"domain":"Modules","name":"t.addClass","from":1499324242381.627,"to":1499324242382.6062},{"domain":"Modules","name":"t.removeClass","from":1499324242382.665,"to":1499324242382.7122},{"domain":"Modules","name":"t.removeClass","from":1499324242382.77,"to":1499324242383.072},{"domain":"Modules","name":"t.setProperty","from":1499324242383.224,"to":1499324242383.396},{"domain":"Modules","name":"t.setProperty","from":1499324242383.487,"to":1499324242383.615},{"domain":"Modules","name":"t.setProperty","from":1499324242383.79,"to":1499324242384.01},{"domain":"Modules","name":"e.activateWith","from":1499324242254.725,"to":1499324242384.256},{"domain":"Modules","name":"e.onCreate","from":1499324242397.17,"to":1499324242397.397},{"domain":"Modules","name":"t._setupUI","from":1499324242432.566,"to":1499324242440.501},{"domain":"Modules","name":"t._setupUI","from":1499324242440.697,"to":1499324242458.1418},{"domain":"Modules","name":"t._setupUI","from":1499324242458.281,"to":1499324242461.919},{"domain":"Modules","name":"Button.createNativeView","from":1499324242462.147,"to":1499324242467.2551},{"domain":"Modules","name":"t._setupUI","from":1499324242462.056,"to":1499324242470.479},{"domain":"Modules","name":"Button.createNativeView","from":1499324242470.6829,"to":1499324242472.0178},{"domain":"Modules","name":"t._setupUI","from":1499324242470.603,"to":1499324242473.687},{"domain":"Modules","name":"Button.createNativeView","from":1499324242473.847,"to":1499324242474.8281},{"domain":"Modules","name":"t._setupUI","from":1499324242473.7852,"to":1499324242476.0378},{"domain":"Modules","name":"t._setupUI","from":1499324242428.96,"to":1499324242476.105},{"domain":"Modules","name":"t._setupUI","from":1499324242406.3518,"to":1499324242476.1658},{"domain":"Modules","name":"t._setupUI","from":1499324242405.6938,"to":1499324242476.216},{"domain":"Modules","name":"t._setupUI","from":1499324242476.387,"to":1499324242489.02},{"domain":"Modules","name":"t._setupUI","from":1499324242399.958,"to":1499324242489.164},{"domain":"Modules","name":"t.applyCssState","from":1499324242495.4329,"to":1499324242496.085},{"domain":"Modules","name":"t._setCssState","from":1499324242495.343,"to":1499324242496.217},{"domain":"Modules","name":"t.applyCssState","from":1499324242496.5571,"to":1499324242497.091},{"domain":"Modules","name":"t._setCssState","from":1499324242496.4429,"to":1499324242497.1829},{"domain":"Modules","name":"t.applyCssState","from":1499324242497.644,"to":1499324242497.7002},{"domain":"Modules","name":"t._setCssState","from":1499324242497.3271,"to":1499324242497.897},{"domain":"Modules","name":"t.applyCssState","from":1499324242499.178,"to":1499324242500.1401},{"domain":"Modules","name":"t._setCssState","from":1499324242499.042,"to":1499324242500.226},{"domain":"Modules","name":"t.applyCssState","from":1499324242500.602,"to":1499324242500.731},{"domain":"Modules","name":"t._setCssState","from":1499324242500.4978,"to":1499324242500.796},{"domain":"Modules","name":"t.applyCssState","from":1499324242512.336,"to":1499324242513.032},{"domain":"Modules","name":"t._setCssState","from":1499324242512.1658,"to":1499324242513.187},{"domain":"Modules","name":"t.applyCssState","from":1499324242513.6829,"to":1499324242514.219},{"domain":"Modules","name":"t._setCssState","from":1499324242513.593,"to":1499324242514.303},{"domain":"Modules","name":"t.applyCssState","from":1499324242514.603,"to":1499324242515.1812},{"domain":"Modules","name":"t._setCssState","from":1499324242514.4949,"to":1499324242515.2488},{"domain":"Modules","name":"t.applyCssState","from":1499324242515.4639,"to":1499324242515.6611},{"domain":"Modules","name":"t._setCssState","from":1499324242515.39,"to":1499324242515.715},{"domain":"Modules","name":"t.applyCssState","from":1499324242515.949,"to":1499324242516.219},{"domain":"Modules","name":"t._setCssState","from":1499324242515.858,"to":1499324242516.345},{"domain":"Modules","name":"t.applyCssState","from":1499324242516.6,"to":1499324242516.754},{"domain":"Modules","name":"t._setCssState","from":1499324242516.488,"to":1499324242516.812},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242517.149,"to":1499324242551.136},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242551.657,"to":1499324242552.4932},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242552.699,"to":1499324242558.107},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242558.343,"to":1499324242560.4402},{"domain":"Modules","name":"t.onLoaded","from":1499324242558.2761,"to":1499324242560.7139},{"domain":"Modules","name":"View.onLoaded","from":1499324242558.271,"to":1499324242560.841},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242560.981,"to":1499324242584.3708},{"domain":"Modules","name":"t.onLoaded","from":1499324242560.936,"to":1499324242585.09},{"domain":"Modules","name":"View.onLoaded","from":1499324242560.9321,"to":1499324242586.9912},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242587.1082,"to":1499324242592.009},{"domain":"Modules","name":"t.onLoaded","from":1499324242587.0898,"to":1499324242592.292},{"domain":"Modules","name":"View.onLoaded","from":1499324242587.084,"to":1499324242593.052},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242593.2202,"to":1499324242602.605},{"domain":"Modules","name":"t.onLoaded","from":1499324242593.16,"to":1499324242602.908},{"domain":"Modules","name":"View.onLoaded","from":1499324242593.155,"to":1499324242603.049},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242603.1748,"to":1499324242606.5579},{"domain":"Modules","name":"t.onLoaded","from":1499324242603.1182,"to":1499324242606.7578},{"domain":"Modules","name":"View.onLoaded","from":1499324242603.113,"to":1499324242606.871},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242606.99,"to":1499324242610.304},{"domain":"Modules","name":"t.onLoaded","from":1499324242606.9382,"to":1499324242610.444},{"domain":"Modules","name":"View.onLoaded","from":1499324242606.934,"to":1499324242610.5432},{"domain":"Modules","name":"t.onLoaded","from":1499324242552.638,"to":1499324242610.645},{"domain":"Modules","name":"View.onLoaded","from":1499324242552.6348,"to":1499324242610.729},{"domain":"Modules","name":"t.onLoaded","from":1499324242551.599,"to":1499324242611.0059},{"domain":"Modules","name":"View.onLoaded","from":1499324242551.5972,"to":1499324242611.4648},{"domain":"Modules","name":"t.onLoaded","from":1499324242551.5242,"to":1499324242611.758},{"domain":"Modules","name":"t.onLoaded","from":1499324242551.415,"to":1499324242611.9731},{"domain":"Modules","name":"View.onLoaded","from":1499324242551.409,"to":1499324242612.0881},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242612.524,"to":1499324242618.935},{"domain":"Modules","name":"t.onLoaded","from":1499324242612.4312,"to":1499324242619.1638},{"domain":"Modules","name":"View.onLoaded","from":1499324242612.4238,"to":1499324242619.252},{"domain":"Modules","name":"t.onLoaded","from":1499324242517.075,"to":1499324242620.362},{"domain":"Modules","name":"View.onLoaded","from":1499324242517.046,"to":1499324242620.461},{"domain":"Modules","name":"t.onLoaded","from":1499324242489.395,"to":1499324242620.513},{"domain":"Modules","name":"Page.onLoaded","from":1499324242489.272,"to":1499324242620.7832},{"domain":"Modules","name":"t._addView","from":1499324242399.799,"to":1499324242620.875},{"domain":"Modules","name":"e.onCreateView","from":1499324242399.274,"to":1499324242622.147},{"domain":"Modules","name":"e.onCreateAnimator","from":1499324242622.515,"to":1499324242623.2908},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242648.9832,"to":1499324242650.2651},{"domain":"Modules","name":"t.applyCssState","from":1499324242647.5598,"to":1499324242650.4},{"domain":"Modules","name":"t._setCssState","from":1499324242647.445,"to":1499324242650.455},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242647.2908,"to":1499324242650.503},{"domain":"Modules","name":"t.removeClass","from":1499324242647.1418,"to":1499324242650.574},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242651.895,"to":1499324242652.4001},{"domain":"Modules","name":"t.applyCssState","from":1499324242650.942,"to":1499324242652.4749},{"domain":"Modules","name":"t._setCssState","from":1499324242650.855,"to":1499324242652.5251},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242650.757,"to":1499324242652.566},{"domain":"Modules","name":"t.addClass","from":1499324242650.6519,"to":1499324242652.625},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242655.336,"to":1499324242655.9512},{"domain":"Modules","name":"t.applyCssState","from":1499324242653.9111,"to":1499324242656.0498},{"domain":"Modules","name":"t._setCssState","from":1499324242653.826,"to":1499324242656.099},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242653.7322,"to":1499324242656.568},{"domain":"Modules","name":"t.removeClass","from":1499324242653.6262,"to":1499324242656.638},{"domain":"Modules","name":"\"properties\".initNativeView","from":1499324242659.18,"to":1499324242659.763},{"domain":"Modules","name":"t.applyCssState","from":1499324242657.303,"to":1499324242659.844},{"domain":"Modules","name":"t._setCssState","from":1499324242657.218,"to":1499324242659.897},{"domain":"Modules","name":"t._applyStyleFromScope","from":1499324242657.115,"to":1499324242659.9412},{"domain":"Modules","name":"t.addClass","from":1499324242656.71,"to":1499324242660},{"name":"Startup time...","from":1499324239634.927,"to":1499324242698.927},{"from":1499324239634.927,"to":1499324242698.927,"name":"ALL"}];
+var background = document.createElement('canvas');
+var context = background.getContext("2d");
+var traceShadow = document.createElement('canvas');
+var traceShadowContext = traceShadow.getContext("2d");
+var rulerBackgroundPattern = document.createElement('canvas');
+var rulerBackgroundPatternContext = rulerBackgroundPattern.getContext("2d");
+var timelineBackgroundPattern = document.createElement('canvas');
+var timelineBackgroundPatternContext = timelineBackgroundPattern.getContext("2d");
+var chart = document.createElement('div');
+chart.id = "chart";
+chart.appendChild(background);
+var tracesDiv = document.createElement('div');
+tracesDiv.id = "traces";
+chart.appendChild(tracesDiv);
+document.body.appendChild(chart);
+function createStackTraces(traces) {
+    traces = traces.slice(0).sort(function (a, b) {
+        if (a.from < b.from) {
+            return -1;
+        }
+        else if (a.from === b.from) {
+            if (a.to > b.to) {
+                return -1;
+            }
+            else if (a.to === b.to) {
+                return 0;
+            }
+            else {
+                return 1;
+            }
+        }
+        else {
+            return 1;
+        }
+    });
+    var traceAtDepth = [];
+    var stackedTraces = traces.map(function (original) {
+        var from = original.from, to = original.to, name = original.name, domain = original.domain;
+        var trace = { from: from, to: to };
+        var depth;
+        for (var i = 0; i <= traceAtDepth.length; i++) {
+            if (traceAtDepth[i] === undefined || traceAtDepth[i].to <= from) {
+                depth = i;
+                traceAtDepth[i] = trace;
+                break;
+            }
+        }
+        var parent;
+        for (var i = depth - 1; i >= 0; i--) {
+            var potentialParent = traceAtDepth[i];
+            if (potentialParent.from <= trace.from && potentialParent.to >= trace.to) {
+                trace.parent = parent = potentialParent;
+                break;
+            }
+        }
+        var importance;
+        if (parent) {
+            // If it is very big, or very small - it does not matter, if it is about half its parent then it is important.
+            var ratio = (trace.to - trace.from) / (parent.to - parent.from);
+            importance = depth <= 1 ? 1 : 0.5 - Math.cos(2 * Math.PI * ratio) * 0.5;
+        }
+        else {
+            importance = 1;
+        }
+        var innerText = name + " " + Math.round(to - from) + "ms";
+        var title = name + " " + (to - from) + "ms " + importance;
+        var visible = false;
+        var div = document.createElement('div');
+        div.className = "trace " + domain;
+        tracesDiv.appendChild(div);
+        div.title = title;
+        div.innerText = innerText;
+        div.style.visibility = "hidden";
+        div.style.top = 30 + depth * 21 + "px";
+        div.addEventListener("click", focusTrace);
+        Object.assign(trace, { from: from, to: to, name: name, domain: domain, depth: depth, innerText: innerText, title: title, div: div, visible: visible, leftPx: 0, rightPx: 0, parent: parent, importance: importance });
+        div.trace = trace;
+        return trace;
+    }).sort(function (a, b) { return b.importance - a.importance; });
+    return stackedTraces;
+}
+var stackTraces = createStackTraces(timeline);
+var visibleStackTraces = new Set();
+var min = stackTraces.reduce(function (min, trace) { return Math.min(min, trace.from); }, Number.POSITIVE_INFINITY);
+var max = stackTraces.reduce(function (max, trace) { return Math.max(max, trace.to); }, Number.NEGATIVE_INFINITY);
+var left = min;
+var pixelPerMs = 0.0000001;
+var levelOfDetail = 0 /* High */;
+var debounceLODTimeout;
+function highLOD() {
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    levelOfDetail = 0 /* High */;
+    tracesDiv.style.pointerEvents = "auto";
+    updateStackTraces();
+}
+function lowLOD() {
+    levelOfDetail = 1 /* Low */;
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    debounceLODTimeout = setTimeout(highLOD, 1000);
+    tracesDiv.style.pointerEvents = "none";
+}
+function updateStackTraces() {
+    var windowWidth = window.innerWidth;
+    var right = left + (windowWidth / pixelPerMs);
+    var nextVisible = new Set();
+    var showTraces = levelOfDetail === 1 /* Low */ ? 64 : 512;
+    for (var i = 0; i < stackTraces.length && nextVisible.size < showTraces; i++) {
+        var trace = stackTraces[i];
+        trace.leftPx = (trace.from - left) * pixelPerMs;
+        trace.rightPx = (trace.to - left) * pixelPerMs;
+        if (trace.rightPx >= 0 && trace.leftPx <= windowWidth && (trace.rightPx - trace.leftPx >= 2)) {
+            nextVisible.add(trace);
+        }
+    }
+    visibleStackTraces.forEach(function (trace) {
+        if (nextVisible.has(trace)) {
+            return;
+        }
+        trace.div.style.visibility = "collapse";
+    });
+    nextVisible.forEach(function (trace) {
+        var div = trace.div, leftPx = trace.leftPx, rightPx = trace.rightPx;
+        div.style.left = Math.max(-5, leftPx) + "px";
+        div.style.right = Math.max(-5, windowWidth - rightPx) + "px";
+        if (!visibleStackTraces.has(trace)) {
+            div.style.visibility = "visible";
+        }
+    });
+    visibleStackTraces = nextVisible;
+}
+function snap(px) {
+    return Math.floor(px) + 0.5;
+}
+function redrawBackground() {
+    rulerBackgroundPatternContext.fillStyle = "#DDD";
+    rulerBackgroundPatternContext.fillRect(0, 0, rulerBackgroundPattern.width, rulerBackgroundPattern.height);
+    timelineBackgroundPatternContext.fillStyle = "#FFF";
+    timelineBackgroundPatternContext.fillRect(0, 0, timelineBackgroundPattern.width, timelineBackgroundPattern.height);
+    rulerBackgroundPatternContext.lineWidth = 1;
+    rulerBackgroundPatternContext.strokeStyle = "#BBB";
+    rulerBackgroundPatternContext.beginPath();
+    rulerBackgroundPatternContext.moveTo(snap(0), 0);
+    rulerBackgroundPatternContext.lineTo(snap(0), rulerBackgroundPattern.height);
+    rulerBackgroundPatternContext.stroke();
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(snap(0), 0);
+    timelineBackgroundPatternContext.lineTo(snap(0), timelineBackgroundPattern.height);
+    timelineBackgroundPatternContext.stroke();
+    // timeline horizontal lines
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(0, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.lineTo(timelineBackgroundPattern.width, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.stroke();
+    rulerBackgroundPatternContext.strokeStyle = "#CCC";
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    for (var i = 1; i < 10; i++) {
+        var x = rulerBackgroundPattern.width / 1000 * i * 100;
+        rulerBackgroundPatternContext.beginPath();
+        rulerBackgroundPatternContext.moveTo(snap(x), rulerBackgroundPattern.height - rulerBackgroundPattern.height * 0.25);
+        rulerBackgroundPatternContext.lineTo(snap(x), rulerBackgroundPattern.height);
+        rulerBackgroundPatternContext.stroke();
+        timelineBackgroundPatternContext.beginPath();
+        timelineBackgroundPatternContext.moveTo(snap(x), 0);
+        timelineBackgroundPatternContext.lineTo(snap(x), timelineBackgroundPattern.height);
+        timelineBackgroundPatternContext.stroke();
+    }
+    var rulerOffset = -Math.round((left - Math.floor(left / 1000) * 1000) * pixelPerMs);
+    var rulerPattern = context.createPattern(rulerBackgroundPattern, "repeat");
+    context.fillStyle = rulerPattern;
+    context.translate(rulerOffset, 0);
+    context.fillRect(-rulerOffset, 0, background.width, 30);
+    context.translate(-rulerOffset, 0);
+    var timelinePattern = context.createPattern(timelineBackgroundPattern, "repeat");
+    context.fillStyle = timelinePattern;
+    context.translate(rulerOffset, 31);
+    context.fillRect(-rulerOffset, 0, background.width, background.height - 30);
+    context.translate(-rulerOffset, -31);
+    // Separators
+    context.lineWidth = 1;
+    context.strokeStyle = "#666";
+    context.beginPath();
+    context.moveTo(0, snap(30));
+    context.lineTo(background.width, snap(30));
+    context.stroke();
+}
+function resize() {
+    background.width = window.innerWidth;
+    background.height = window.innerHeight;
+}
+function resizeRulers() {
+    // Lets try major rules on seconds and minor rules on 100ms.
+    var width = 1000 * pixelPerMs;
+    rulerBackgroundPattern.width = width;
+    rulerBackgroundPattern.height = 30;
+    timelineBackgroundPattern.width = width;
+    timelineBackgroundPattern.height = 21;
+}
+function clampViewPort() {
+    pixelPerMs = Math.max(window.innerWidth / (max - min), pixelPerMs);
+    left = Math.min(Math.max(min, left), max - window.innerWidth / pixelPerMs);
+}
+function focusTrace(ev) {
+    if (suspendClicks) {
+        return;
+    }
+    var trace = this.trace;
+    pixelPerMs = window.innerWidth / (trace.to - trace.from);
+    left = trace.from;
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+}
+window.addEventListener("resize", function () {
+    resize();
+    resizeRulers();
+    clampViewPort();
+    updateStackTraces();
+    redrawBackground();
+});
+window.addEventListener("mousewheel", function (e) {
+    var mousePoint = left + e.clientX / pixelPerMs;
+    pixelPerMs = Math.pow(2, Math.log2(pixelPerMs) + Math.max(-0.25, Math.min(0.25, e.wheelDelta)));
+    left = mousePoint - e.clientX / pixelPerMs;
+    lowLOD();
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+});
+var dragging = false;
+var suspendClicks = false;
+var mouseDown = false;
+var dragOriginXms; // The millisecond at which the chart was grabbed
+var dragOriginXpx;
+window.addEventListener("mousedown", function (e) {
+    dragOriginXms = left + e.clientX / pixelPerMs;
+    dragOriginXpx = e.clientX;
+    mouseDown = true;
+}, true);
+window.addEventListener("mouseup", function (e) {
+    if (dragging) {
+        dragging = false;
+        // Cant find a way to prevent the click action
+        suspendClicks = true;
+        setTimeout(function () { return suspendClicks = false; }, 1);
+    }
+    mouseDown = false;
+});
+window.addEventListener("mousemove", function (e) {
+    if (mouseDown && !dragging && Math.abs(e.clientX - dragOriginXpx) > 8) {
+        dragging = true;
+    }
+    if (dragging) {
+        left = dragOriginXms - e.clientX / pixelPerMs;
+        lowLOD();
+        clampViewPort();
+        redrawBackground();
+        updateStackTraces();
+    }
+});
+clampViewPort();
+resize();
+resizeRulers();
+redrawBackground();
+updateStackTraces();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profiling</title>
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.trace {
+    position: absolute;
+    border: 1px solid black;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #DDD;
+    cursor: default;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.trace.Modules {
+    background-color: #BFF;
+}
+.trace.Runtime {
+    background-color: #FFB;
+}
+.trace:hover {
+    background-color: #FFF;
+    border-color: orange;
+    z-index: 1;
+    box-shadow: 0px 1px 5px black;
+}
+</style>
+</head>
+<body>
+  <script>
+var timeline = [{"domain":"Runtime","name":"Debug: Wait for JavaScript debugger","from":29327604.287,"to":29328105.609},{"domain":"Runtime","name":"main","from":29327207.129,"to":29328105.893},{"domain":"Runtime","name":"Expose: NSURL","from":29328213.504,"to":29328232.996},{"domain":"Runtime","name":"Expose: CIImage","from":29328213.362,"to":29328233.21},{"domain":"Runtime","name":"Expose: UIImage","from":29328213.262,"to":29328234.317},{"domain":"Runtime","name":"Expose: UIBarItem","from":29328213.144,"to":29328234.784},{"domain":"Runtime","name":"Expose: UIBarButtonItem","from":29328213.125,"to":29328235.373},{"domain":"Runtime","name":"Expose: UIViewController","from":29328179.949,"to":29328250.803},{"domain":"Runtime","name":"Expose: UIView","from":29328172.205,"to":29328253.022},{"domain":"Runtime","name":"Expose: UIResponder","from":29328172.13,"to":29328264.062},{"domain":"Runtime","name":"Expose: UIScreen","from":29328171.71,"to":29328268.86},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/utils/utils.js","from":29328161.78,"to":29328269.334},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/image-source/image-source.js","from":29328269.426,"to":29328294.518},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/styling/background.js","from":29328145.556,"to":29328302.9},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/styling/font-common.js","from":29328319.75,"to":29328336.628},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/styling/font.js","from":29328316.627,"to":29328367.313},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/styling/style-properties.js","from":29328308.057,"to":29328380.073},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/js-libs/polymer-expressions/polymer-expressions.js","from":29328416.619,"to":29328446.168},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/core/bindable/bindable.js","from":29328397.046,"to":29328448.471},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/core/view-base/view-base.js","from":29328387.922,"to":29328461.677},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/gestures/gestures.js","from":29328461.896,"to":29328478.827},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/core/view/view-common.js","from":29328303.078,"to":29328484.524},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/core/view/view.js","from":29328141.395,"to":29328488.648},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/xml/xml.js","from":29328505.241,"to":29328523.049},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/builder/builder.js","from":29328496.638,"to":29328534.649},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/frame/frame-common.js","from":29328138.96,"to":29328539.804},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/frame/frame.js","from":29328130.896,"to":29328557.849},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/application/application.js","from":29328121.238,"to":29328563.736},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/http/http-request/http-request.js","from":29328601.57,"to":29328633.352},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/http/http.js","from":29328596.343,"to":29328633.906},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/xhr/xhr.js","from":29328590.171,"to":29328636.509},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/fetch/fetch.js","from":29328583.625,"to":29328637.68},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/timer/timer.js","from":29328699.464,"to":29328715.996},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/zone-js/dist/zone-nativescript.js","from":29328563.952,"to":29328717.351},{"domain":"Runtime","name":"require: /app/tns_modules/rxjs/Subscriber.js","from":29328758.201,"to":29328777.026},{"domain":"Runtime","name":"require: /app/tns_modules/rxjs/Observable.js","from":29328753.089,"to":29328779.552},{"domain":"Runtime","name":"require: /app/tns_modules/rxjs/operator/merge.js","from":29328781.743,"to":29328801.365},{"domain":"Runtime","name":"require: /app/tns_modules/rxjs/observable/merge.js","from":29328779.654,"to":29328801.491},{"domain":"Runtime","name":"require: /app/tns_modules/@angular/core/./bundles/core.umd.js","from":29328727.015,"to":29328829.005},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/page/page-common.js","from":29328836.953,"to":29328866.664},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/page/page.js","from":29328833.53,"to":29328868.579},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/platform-providers.js","from":29328831.702,"to":29328869.585},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/editable-text-base/editable-text-base.js","from":29328873.45,"to":29328891.789},{"domain":"Runtime","name":"require: /app/tns_modules/tns-core-modules/ui/text-view/text-view.js","from":29328870.373,"to":29328893.461},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/platform-common.js","from":29328113.012,"to":29328900.694},{"domain":"Runtime","name":"require: /app/tns_modules/@angular/compiler/./bundles/compiler.umd.js","from":29328900.792,"to":29328974.566},{"domain":"Runtime","name":"require: /app/tns_modules/@angular/platform-browser/./bundles/platform-browser.umd.js","from":29328984.835,"to":29329013.163},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/dom-adapter.js","from":29328975.151,"to":29329013.574},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/platform.js","from":29328110.981,"to":29329017.891},{"domain":"Runtime","name":"require: /app/tns_modules/@angular/forms/./bundles/forms.umd.js","from":29329078.599,"to":29329105.682},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/value-accessors/text-value-accessor.js","from":29329076.806,"to":29329107.8},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/directives.js","from":29329041.865,"to":29329119.275},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/nativescript.module.js","from":29329019.236,"to":29329119.525},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/animations/utils.js","from":29329148.441,"to":29329165.771},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/animations/animation-player.js","from":29329147.005,"to":29329165.99},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/animations/animation-driver.js","from":29329145.577,"to":29329166.096},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/http.js","from":29329166.746,"to":29329185.2},{"domain":"Runtime","name":"require: /app/tns_modules/@angular/router/./bundles/router.umd.js","from":29329187.423,"to":29329239.525},{"domain":"Runtime","name":"require: /app/tns_modules/nativescript-angular/router.js","from":29329185.325,"to":29329261.98},{"domain":"Runtime","name":"require: /app/services/firebase.service.js","from":29329271.912,"to":29329294.557},{"domain":"Runtime","name":"require: /app/services/index.js","from":29329271.062,"to":29329295.928},{"domain":"Runtime","name":"require: /app/home/home.module.js","from":29329308.832,"to":29329326.107},{"domain":"Runtime","name":"require: /app/tns_modules/rxjs/Rx.js","from":29329347.197,"to":29329793.938},{"domain":"Runtime","name":"require: /app/student-home/student-home.component.js","from":29329328.685,"to":29329794.792},{"domain":"Runtime","name":"require: /app/student-home/student-home.routes.js","from":29329327.939,"to":29329794.873},{"domain":"Runtime","name":"require: /app/student-home/student-home.module.js","from":29329326.248,"to":29329795.116},{"domain":"Runtime","name":"require: /app/app.module.js","from":29329017.989,"to":29329875.7},{"domain":"Modules","name":"NativeScriptPlatformRef.createNavigationEntry","from":29329881.738833,"to":29329881.954625},{"domain":"Modules","name":"File.readTextSync","from":29330023.2465,"to":29330024.609125},{"domain":"Modules","name":"\"style-scope\".loadCss","from":29330021.544875,"to":29330036.612208},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330047.919791,"to":29330048.285916},{"domain":"Modules","name":"Frame.onLoaded","from":29330047.859291,"to":29330048.44725},{"domain":"Modules","name":"UINavigationControllerImpl.viewDidLoad","from":29330047.668083,"to":29330048.543041},{"domain":"Modules","name":"StyleScope._createSelectors","from":29330052.60175,"to":29330053.591083},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330056.746625,"to":29330058.535166},{"domain":"Modules","name":"ViewBase._setCssState","from":29330056.44525,"to":29330058.718666},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330055.079958,"to":29330058.779291},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330055.009833,"to":29330058.842375},{"domain":"Modules","name":"ViewBase._addView","from":29330054.64925,"to":29330059.173541},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330059.898291,"to":29330060.98175},{"domain":"Modules","name":"ViewBase._setCssState","from":29330059.860041,"to":29330061.1065},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330061.236083,"to":29330061.400333},{"domain":"Modules","name":"ViewBase._setCssState","from":29330061.227125,"to":29330061.541625},{"domain":"Modules","name":"Frame._navigateCore","from":29330061.896666,"to":29330063.806},{"name":"Startup time...","from":29327039.0715,"to":29330069.1985},{"domain":"Modules","name":"View.layout","from":29330072.938541,"to":29330074.047},{"domain":"Modules","name":"File.readTextSync","from":29330123.585666,"to":29330124.420583},{"domain":"Modules","name":"File.readTextSync","from":29330126.382291,"to":29330127.596833},{"domain":"Modules","name":"File.readTextSync","from":29330129.043875,"to":29330129.745833},{"domain":"Modules","name":"File.readTextSync","from":29330131.157125,"to":29330131.891708},{"domain":"Modules","name":"File.readTextSync","from":29330133.302208,"to":29330134.03525},{"domain":"Modules","name":"File.readTextSync","from":29330135.2455,"to":29330135.961083},{"domain":"Modules","name":"File.readTextSync","from":29330137.232625,"to":29330137.971041},{"domain":"Modules","name":"File.readTextSync","from":29330139.228958,"to":29330139.945208},{"domain":"Modules","name":"File.readTextSync","from":29330141.189833,"to":29330141.896833},{"domain":"Modules","name":"nativescript-angular/platform-common.initHandler","from":29330075.58825,"to":29330142.589416},{"domain":"Modules","name":"ViewBase._setupUI","from":29330143.459625,"to":29330143.702541},{"domain":"Modules","name":"ViewBase._setupUI","from":29330142.825208,"to":29330143.801291},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330143.955458,"to":29330144.901},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330145.068625,"to":29330146.398},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330145.05675,"to":29330146.58575},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330143.918291,"to":29330146.645916},{"domain":"Modules","name":"PageBase.onLoaded","from":29330143.885666,"to":29330146.690333},{"domain":"Modules","name":"Page.onLoaded","from":29330143.854666,"to":29330146.793375},{"domain":"Modules","name":"ViewBase._addView","from":29330142.704875,"to":29330146.975},{"domain":"Modules","name":"View.layout","from":29330149.406,"to":29330149.585333},{"domain":"Modules","name":"View.layout","from":29330149.132041,"to":29330193.813125},{"domain":"Modules","name":"View.layout","from":29330149.004708,"to":29330193.968208},{"domain":"Modules","name":"View.layout","from":29330201.691291,"to":29330201.709291},{"domain":"Modules","name":"View.layout","from":29330201.547583,"to":29330202.78025},{"domain":"Modules","name":"File.readTextSync","from":29330233.515916,"to":29330234.233375},{"domain":"Modules","name":"File.readTextSync","from":29330235.894291,"to":29330237.055208},{"domain":"Modules","name":"File.readTextSync","from":29330238.387,"to":29330239.156875},{"domain":"Modules","name":"File.readTextSync","from":29330240.617791,"to":29330241.3375},{"domain":"Modules","name":"File.readTextSync","from":29330242.562041,"to":29330243.267625},{"domain":"Modules","name":"File.readTextSync","from":29330244.47125,"to":29330245.192416},{"domain":"Modules","name":"File.readTextSync","from":29330246.358208,"to":29330247.060083},{"domain":"Modules","name":"File.readTextSync","from":29330248.217833,"to":29330249.001083},{"domain":"Modules","name":"File.readTextSync","from":29330250.1795,"to":29330250.894333},{"domain":"Modules","name":"NativeScriptRenderer.selectRootElement","from":29330801.194,"to":29330801.221416},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330802.688916,"to":29330810.721541},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330811.6805,"to":29330811.70825},{"domain":"Modules","name":"ViewBase._setCssState","from":29330811.662375,"to":29330811.856625},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330811.578458,"to":29330811.926916},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330811.568375,"to":29330812.068833},{"domain":"Modules","name":"ViewBase._setupUI","from":29330812.39075,"to":29330812.564666},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330812.680833,"to":29330812.706541},{"domain":"Modules","name":"ViewBase._addView","from":29330811.53975,"to":29330812.8765},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330811.124666,"to":29330813.180291},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330814.531083,"to":29330815.155416},{"domain":"Modules","name":"nativescript-angular/platform-common.postBootstrapAction","from":29330830.3955,"to":29330830.438333},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330835.386083,"to":29330835.950791},{"domain":"Modules","name":"\"style-scope\".onCssChanged","from":29330837.981375,"to":29330840.234958},{"domain":"Modules","name":"\"renderer\".addStyleToCss","from":29330837.888333,"to":29330840.531416},{"domain":"Modules","name":"EmulatedRenderer.addStyles","from":29330837.77175,"to":29330840.678958},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330840.866125,"to":29330841.120875},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330842.004083,"to":29330842.396958},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330842.60275,"to":29330842.853291},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330843.183583,"to":29330843.219375},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330843.389083,"to":29330843.411583},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330843.546833,"to":29330843.658541},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330844.72175,"to":29330845.68325},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330844.574125,"to":29330845.934833},{"domain":"Modules","name":"ViewBase._setCssState","from":29330844.556583,"to":29330846.118833},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330844.5545,"to":29330846.242875},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330844.549375,"to":29330846.397166},{"domain":"Modules","name":"ViewBase.onUnloaded","from":29330846.543625,"to":29330846.7055},{"domain":"Modules","name":"ViewBase._tearDownUI","from":29330846.893458,"to":29330847.19575},{"domain":"Modules","name":"StyleScope._createSelectors","from":29330847.605958,"to":29330847.972625},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330848.65875,"to":29330848.857583},{"domain":"Modules","name":"ViewBase._setCssState","from":29330848.484416,"to":29330849.051208},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330847.597958,"to":29330849.218416},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330847.594666,"to":29330849.366291},{"domain":"Modules","name":"ViewBase._setupUI","from":29330849.562333,"to":29330849.653916},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330849.80675,"to":29330850.731333},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330849.793833,"to":29330850.989708},{"domain":"Modules","name":"ViewBase._addView","from":29330847.577166,"to":29330851.162125},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330852.75775,"to":29330852.849666},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330853.170208,"to":29330853.225458},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330853.382458,"to":29330861.245708},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330861.506708,"to":29330861.817583},{"domain":"Modules","name":"ViewBase._addView","from":29330862.180375,"to":29330862.223333},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330862.021,"to":29330862.468958},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330862.634541,"to":29330862.647125},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330862.808708,"to":29330862.83275},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330862.996333,"to":29330869.127041},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330869.373333,"to":29330869.671},{"domain":"Modules","name":"ViewBase._addView","from":29330869.914625,"to":29330869.987125},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330869.844708,"to":29330870.188458},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330870.324458,"to":29330870.329833},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330870.493333,"to":29330870.510708},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330870.655041,"to":29330883.255458},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330883.52725,"to":29330883.828583},{"domain":"Modules","name":"ViewBase._addView","from":29330884.080458,"to":29330884.118125},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330884.025666,"to":29330884.373541},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330884.522583,"to":29330884.624375},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330884.77325,"to":29330884.801416},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330884.926958,"to":29330884.962125},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330885.224625,"to":29330885.230125},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330885.435625,"to":29330885.4565},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330885.604541,"to":29330895.7755},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330896.044625,"to":29330896.319208},{"domain":"Modules","name":"ViewBase._addView","from":29330896.545625,"to":29330896.623},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330896.510916,"to":29330896.779375},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330896.954833,"to":29330896.999041},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330897.134833,"to":29330897.304291},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330897.510541,"to":29330897.580416},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330897.710666,"to":29330897.749666},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330898.2395,"to":29330898.428708},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330898.63725,"to":29330899.17},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330899.392708,"to":29330899.407166},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330901.330458,"to":29330901.336916},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330901.57375,"to":29330901.601208},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330901.779125,"to":29330903.087791},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330903.39475,"to":29330903.43975},{"domain":"Modules","name":"ViewBase._addView","from":29330903.621916,"to":29330903.655916},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330903.598458,"to":29330903.878833},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330904.032958,"to":29330904.070833},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330904.212791,"to":29330904.245166},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330904.387166,"to":29330904.416375},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330904.549208,"to":29330904.624291},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330904.954458,"to":29330904.968708},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330905.526666,"to":29330905.531708},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330905.714375,"to":29330905.750416},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330905.910041,"to":29330916.7315},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330916.987958,"to":29330917.267541},{"domain":"Modules","name":"ViewBase._addView","from":29330917.511291,"to":29330917.573291},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330917.465083,"to":29330917.732916},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330918.528083,"to":29330918.550708},{"domain":"Modules","name":"ViewBase._setCssState","from":29330918.515625,"to":29330918.812666},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330918.494583,"to":29330918.962666},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330917.873833,"to":29330919.168666},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330919.321875,"to":29330919.395458},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330919.529583,"to":29330919.534375},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330919.841416,"to":29330919.869041},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330920.067416,"to":29330920.75475},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330920.983208,"to":29330921.023583},{"domain":"Modules","name":"ViewBase._addView","from":29330921.248208,"to":29330921.275125},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330921.19975,"to":29330921.412333},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330921.680708,"to":29330921.690416},{"domain":"Modules","name":"ViewBase._setCssState","from":29330921.673708,"to":29330921.860083},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330921.672208,"to":29330921.981208},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330921.562875,"to":29330922.214083},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330922.347375,"to":29330922.392875},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330922.534958,"to":29330922.538458},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330922.684416,"to":29330922.708166},{"domain":"Modules","name":"NativeScriptRenderer.createElement","from":29330922.956666,"to":29330923.5375},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330923.798166,"to":29330923.879791},{"domain":"Modules","name":"ViewBase._addView","from":29330924.063541,"to":29330924.090416},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330924.029,"to":29330924.231958},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330924.459375,"to":29330924.469583},{"domain":"Modules","name":"ViewBase._setCssState","from":29330924.45425,"to":29330924.625208},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330924.452291,"to":29330924.760875},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330924.371208,"to":29330924.989166},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330925.144583,"to":29330925.207541},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330925.324208,"to":29330925.348125},{"domain":"Modules","name":"NativeScriptRenderer.listen","from":29330925.469458,"to":29330925.529583},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330925.697458,"to":29330925.701125},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330925.868958,"to":29330925.918666},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330926.070083,"to":29330926.08425},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330926.220958,"to":29330926.233958},{"domain":"Modules","name":"NativeScriptRenderer.createText","from":29330926.350291,"to":29330926.352208},{"domain":"Modules","name":"NativeScriptRenderer.appendChild","from":29330926.537416,"to":29330926.58},{"domain":"Modules","name":"NativeScriptRenderer.parentNode","from":29330927.605916,"to":29330927.668458},{"domain":"Modules","name":"NativeScriptRenderer.nextSibling","from":29330927.927708,"to":29330928.133583},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330928.959458,"to":29330929.001541},{"domain":"Modules","name":"ViewBase._setCssState","from":29330928.929541,"to":29330929.170916},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330928.927791,"to":29330929.288166},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330928.922541,"to":29330929.436708},{"domain":"Modules","name":"ViewBase.onUnloaded","from":29330929.558958,"to":29330929.592458},{"domain":"Modules","name":"ViewBase._tearDownUI","from":29330929.726375,"to":29330929.884291},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330930.266833,"to":29330931.507041},{"domain":"Modules","name":"ViewBase._setCssState","from":29330930.220375,"to":29330931.728416},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330930.128791,"to":29330931.854625},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330932.33125,"to":29330932.396666},{"domain":"Modules","name":"ViewBase._setCssState","from":29330932.1655,"to":29330932.553958},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330932.088833,"to":29330932.673666},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330932.924,"to":29330932.945583},{"domain":"Modules","name":"ViewBase._setCssState","from":29330932.883708,"to":29330933.179875},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330932.810875,"to":29330933.361833},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330933.90925,"to":29330934.3185},{"domain":"Modules","name":"ViewBase._setCssState","from":29330933.866458,"to":29330934.579041},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330933.51975,"to":29330934.70425},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330933.51375,"to":29330934.833166},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330935.206416,"to":29330936.819375},{"domain":"Modules","name":"ViewBase._setCssState","from":29330935.1445,"to":29330937.044625},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330935.029041,"to":29330937.178208},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330935.01725,"to":29330937.344125},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330937.655375,"to":29330938.231875},{"domain":"Modules","name":"ViewBase._setCssState","from":29330937.611,"to":29330938.434083},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330937.50325,"to":29330938.564083},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330937.493708,"to":29330938.71875},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330939.245958,"to":29330940.33225},{"domain":"Modules","name":"ViewBase._setCssState","from":29330939.201041,"to":29330940.567},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330938.907208,"to":29330940.732333},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330938.896791,"to":29330940.874875},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330941.215166,"to":29330941.518291},{"domain":"Modules","name":"ViewBase._setCssState","from":29330941.162416,"to":29330941.693291},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330941.061,"to":29330941.846375},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330941.016125,"to":29330942.012916},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330942.286333,"to":29330942.601583},{"domain":"Modules","name":"ViewBase._setCssState","from":29330942.242125,"to":29330942.827},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330942.14575,"to":29330942.983166},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330942.136291,"to":29330943.129},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330932.803875,"to":29330943.282208},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330932.080833,"to":29330943.403583},{"domain":"Modules","name":"ViewBase._setStyleScope","from":29330930.125625,"to":29330943.539375},{"domain":"Modules","name":"ViewBase._setupUI","from":29330948.532916,"to":29330948.592666},{"domain":"Modules","name":"ViewBase._setupUI","from":29330948.81925,"to":29330949.5375},{"domain":"Modules","name":"ViewBase._setupUI","from":29330949.720541,"to":29330950.019083},{"domain":"Modules","name":"ViewBase._setupUI","from":29330950.185041,"to":29330950.297375},{"domain":"Modules","name":"ViewBase._setupUI","from":29330950.473625,"to":29330950.5265},{"domain":"Modules","name":"ViewBase._setupUI","from":29330950.71575,"to":29330950.773708},{"domain":"Modules","name":"ViewBase._setupUI","from":29330948.413666,"to":29330951.00775},{"domain":"Modules","name":"ViewBase._setupUI","from":29330944.087083,"to":29330951.197583},{"domain":"Modules","name":"ViewBase._setupUI","from":29330943.999666,"to":29330951.367958},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330951.724875,"to":29330951.749916},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330951.922375,"to":29330951.931083},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330952.079375,"to":29330963.863},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330952.07175,"to":29330964.1225},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330964.387333,"to":29330969.471791},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330964.375625,"to":29330971.07275},{"domain":"Modules","name":"TextField.onLoaded","from":29330964.323375,"to":29330971.353333},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330971.588958,"to":29330972.697458},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330971.550708,"to":29330973.22675},{"domain":"Modules","name":"TextField.onLoaded","from":29330971.532375,"to":29330973.432791},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330973.652583,"to":29330975.655291},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330973.603,"to":29330975.906583},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330976.080166,"to":29330976.689041},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330976.070083,"to":29330976.896666},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330977.065083,"to":29330979.930125},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330977.0545,"to":29330980.188833},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330951.916,"to":29330980.377666},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330951.714,"to":29330980.517333},{"domain":"Modules","name":"ScrollViewBase.onLoaded","from":29330951.557625,"to":29330980.869916},{"domain":"Modules","name":"ViewBase.onLoaded","from":29330951.538,"to":29330981.04175},{"domain":"Modules","name":"ViewBase._addView","from":29330930.111208,"to":29330981.24175},{"domain":"Modules","name":"NativeScriptRenderer.insertBefore","from":29330928.824833,"to":29330981.407166},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330985.030541,"to":29330985.078791},{"domain":"Modules","name":"NativeScriptRenderer.setAttribute","from":29330985.988916,"to":29330986.02625},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330988.013666,"to":29330988.070125},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330987.384708,"to":29330988.313458},{"domain":"Modules","name":"ViewBase._setCssState","from":29330987.215083,"to":29330988.495666},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330987.104,"to":29330988.625208},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330989.26275,"to":29330989.269041},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330989.088041,"to":29330989.4615},{"domain":"Modules","name":"ViewBase._setCssState","from":29330989.019958,"to":29330989.603541},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330988.90925,"to":29330989.730416},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330990.870916,"to":29330991.072625},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330990.051083,"to":29330991.275458},{"domain":"Modules","name":"ViewBase._setCssState","from":29330989.984166,"to":29330991.429041},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330989.884541,"to":29330991.576125},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330992.541166,"to":29330992.704333},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330991.932791,"to":29330992.924916},{"domain":"Modules","name":"ViewBase._setCssState","from":29330991.786791,"to":29330993.138333},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330991.705041,"to":29330993.299416},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330994.5455,"to":29330994.744875},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330993.600541,"to":29330994.981041},{"domain":"Modules","name":"ViewBase._setCssState","from":29330993.540166,"to":29330995.115833},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330993.435291,"to":29330995.240083},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330995.801333,"to":29330995.907625},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330995.546333,"to":29330996.084708},{"domain":"Modules","name":"ViewBase._setCssState","from":29330995.475708,"to":29330996.210166},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330995.385916,"to":29330996.382333},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330997.15125,"to":29330997.467916},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330996.769458,"to":29330997.664125},{"domain":"Modules","name":"ViewBase._setCssState","from":29330996.712916,"to":29330997.8165},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330996.620083,"to":29330997.957125},{"domain":"Modules","name":"NativeScriptRenderer.setProperty","from":29330986.943708,"to":29330998.108416},{"domain":"Modules","name":"\"properties\".initNativeView","from":29330999.72,"to":29330999.870708},{"domain":"Modules","name":"ViewBase.applyCssState","from":29330999.204333,"to":29331000.087916},{"domain":"Modules","name":"ViewBase._setCssState","from":29330999.118583,"to":29331000.254875},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29330999.039083,"to":29331000.374291},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29330998.853875,"to":29331000.609416},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331000.9535,"to":29331001.096708},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331002.179041,"to":29331002.370333},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331001.493625,"to":29331002.649916},{"domain":"Modules","name":"ViewBase._setCssState","from":29331001.403666,"to":29331002.790791},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29331001.279583,"to":29331003.05325},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331003.229625,"to":29331003.264166},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331004.258708,"to":29331004.454958},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331003.571333,"to":29331004.650083},{"domain":"Modules","name":"ViewBase._setCssState","from":29331003.508166,"to":29331004.79},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331003.420916,"to":29331004.961666},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29331003.391166,"to":29331005.107625},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331005.4655,"to":29331005.475791},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331006.597708,"to":29331006.760583},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331005.951333,"to":29331006.963541},{"domain":"Modules","name":"ViewBase._setCssState","from":29331005.895125,"to":29331007.139541},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331005.770375,"to":29331007.273833},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29331005.704875,"to":29331007.417333},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331007.542333,"to":29331007.581166},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331008.688916,"to":29331008.906},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331008.014208,"to":29331009.125333},{"domain":"Modules","name":"ViewBase._setCssState","from":29331007.900541,"to":29331009.283583},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331007.795375,"to":29331009.404625},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29331007.73975,"to":29331009.549791},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331009.681916,"to":29331009.70575},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331010.681958,"to":29331010.853208},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331010.037708,"to":29331011.044708},{"domain":"Modules","name":"ViewBase._setCssState","from":29331009.992625,"to":29331011.191},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331009.8955,"to":29331011.311041},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29331009.864708,"to":29331011.551375},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331011.697333,"to":29331011.736583},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331011.873041,"to":29331011.884833},{"domain":"Modules","name":"NativeScriptRenderer.setProperty","from":29331012.041375,"to":29331012.197125},{"domain":"Modules","name":"NativeScriptRenderer.setProperty","from":29331012.591625,"to":29331012.674041},{"domain":"Modules","name":"NativeScriptRenderer.setProperty","from":29331012.8525,"to":29331012.947833},{"domain":"Modules","name":"PageRouterOutlet.activateWith","from":29330834.762875,"to":29331013.24525},{"domain":"Modules","name":"View.onMeasure","from":29331032.406625,"to":29331033.283583},{"domain":"Modules","name":"View.onMeasure","from":29331033.971833,"to":29331034.130041},{"domain":"Modules","name":"View.layout","from":29331036.326625,"to":29331036.421958},{"domain":"Modules","name":"View.layout","from":29331042.720375,"to":29331043.396291},{"domain":"Modules","name":"View.layout","from":29331043.529458,"to":29331043.809},{"domain":"Modules","name":"View.layout","from":29331043.889,"to":29331044.121833},{"domain":"Modules","name":"View.layout","from":29331044.196583,"to":29331044.369208},{"domain":"Modules","name":"View.layout","from":29331044.443958,"to":29331044.609166},{"domain":"Modules","name":"View.layout","from":29331036.754083,"to":29331044.898708},{"domain":"Modules","name":"View.layout","from":29331036.545458,"to":29331045.326875},{"domain":"Modules","name":"View.layout","from":29331036.283375,"to":29331045.531625},{"domain":"Modules","name":"View.layout","from":29331036.128916,"to":29331045.652},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331057.845375,"to":29331058.043083},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331057.140541,"to":29331058.304125},{"domain":"Modules","name":"ViewBase._setCssState","from":29331057.065458,"to":29331058.381958},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331056.944208,"to":29331058.454541},{"domain":"Modules","name":"NativeScriptRenderer.removeClass","from":29331056.876875,"to":29331058.534541},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331059.213333,"to":29331059.342833},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331058.771791,"to":29331064.551833},{"domain":"Modules","name":"ViewBase._setCssState","from":29331058.726916,"to":29331064.703833},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331058.653125,"to":29331064.781791},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29331058.617416,"to":29331064.878583},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331066.368375,"to":29331066.531333},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331065.817916,"to":29331066.702333},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331065.663791,"to":29331067.179416},{"domain":"Modules","name":"\"properties\".initNativeView","from":29331068.471,"to":29331068.618708},{"domain":"Modules","name":"ViewBase.applyCssState","from":29331067.914958,"to":29331068.881375},{"domain":"Modules","name":"ViewBase._applyStyleFromScope","from":29331067.619875,"to":29331069.067666},{"domain":"Modules","name":"NativeScriptRenderer.addClass","from":29331067.494541,"to":29331069.146541},{"domain":"Modules","name":"View.onMeasure","from":29331070.514375,"to":29331070.5975},{"domain":"Modules","name":"View.layout","from":29331071.729,"to":29331071.737375},{"domain":"Modules","name":"View.layout","from":29331071.934375,"to":29331071.95375},{"domain":"Modules","name":"View.layout","from":29331072.03025,"to":29331072.728875},{"domain":"Modules","name":"View.layout","from":29331073.405333,"to":29331073.440583},{"domain":"Modules","name":"View.layout","from":29331073.9125,"to":29331073.939916},{"domain":"Modules","name":"View.layout","from":29331071.883541,"to":29331074.131333},{"domain":"Modules","name":"View.layout","from":29331071.848708,"to":29331074.242458},{"domain":"Modules","name":"View.layout","from":29331071.698958,"to":29331074.342875},{"domain":"Modules","name":"View.layout","from":29331071.529083,"to":29331074.417833},{"from":29327039.0715,"to":29331074.417833,"name":"ALL"}];
+var background = document.createElement('canvas');
+var context = background.getContext("2d");
+var traceShadow = document.createElement('canvas');
+var traceShadowContext = traceShadow.getContext("2d");
+var rulerBackgroundPattern = document.createElement('canvas');
+var rulerBackgroundPatternContext = rulerBackgroundPattern.getContext("2d");
+var timelineBackgroundPattern = document.createElement('canvas');
+var timelineBackgroundPatternContext = timelineBackgroundPattern.getContext("2d");
+var chart = document.createElement('div');
+chart.id = "chart";
+chart.appendChild(background);
+var tracesDiv = document.createElement('div');
+tracesDiv.id = "traces";
+chart.appendChild(tracesDiv);
+document.body.appendChild(chart);
+function createStackTraces(traces) {
+    traces = traces.slice(0).sort(function (a, b) {
+        if (a.from < b.from) {
+            return -1;
+        }
+        else if (a.from === b.from) {
+            if (a.to > b.to) {
+                return -1;
+            }
+            else if (a.to === b.to) {
+                return 0;
+            }
+            else {
+                return 1;
+            }
+        }
+        else {
+            return 1;
+        }
+    });
+    var traceAtDepth = [];
+    var stackedTraces = traces.map(function (original) {
+        var from = original.from, to = original.to, name = original.name, domain = original.domain;
+        var trace = { from: from, to: to };
+        var depth;
+        for (var i = 0; i <= traceAtDepth.length; i++) {
+            if (traceAtDepth[i] === undefined || traceAtDepth[i].to <= from) {
+                depth = i;
+                traceAtDepth[i] = trace;
+                break;
+            }
+        }
+        var parent;
+        for (var i = depth - 1; i >= 0; i--) {
+            var potentialParent = traceAtDepth[i];
+            if (potentialParent.from <= trace.from && potentialParent.to >= trace.to) {
+                trace.parent = parent = potentialParent;
+                break;
+            }
+        }
+        var importance;
+        if (parent) {
+            // If it is very big, or very small - it does not matter, if it is about half its parent then it is important.
+            var ratio = (trace.to - trace.from) / (parent.to - parent.from);
+            importance = depth <= 1 ? 1 : 0.5 - Math.cos(2 * Math.PI * ratio) * 0.5;
+        }
+        else {
+            importance = 1;
+        }
+        var innerText = name + " " + Math.round(to - from) + "ms";
+        var title = name + " " + (to - from) + "ms " + importance;
+        var visible = false;
+        var div = document.createElement('div');
+        div.className = "trace " + domain;
+        tracesDiv.appendChild(div);
+        div.title = title;
+        div.innerText = innerText;
+        div.style.visibility = "hidden";
+        div.style.top = 30 + depth * 21 + "px";
+        div.addEventListener("click", focusTrace);
+        Object.assign(trace, { from: from, to: to, name: name, domain: domain, depth: depth, innerText: innerText, title: title, div: div, visible: visible, leftPx: 0, rightPx: 0, parent: parent, importance: importance });
+        div.trace = trace;
+        return trace;
+    }).sort(function (a, b) { return b.importance - a.importance; });
+    return stackedTraces;
+}
+var stackTraces = createStackTraces(timeline);
+var visibleStackTraces = new Set();
+var min = stackTraces.reduce(function (min, trace) { return Math.min(min, trace.from); }, Number.POSITIVE_INFINITY);
+var max = stackTraces.reduce(function (max, trace) { return Math.max(max, trace.to); }, Number.NEGATIVE_INFINITY);
+var left = min;
+var pixelPerMs = 0.0000001;
+var levelOfDetail = 0 /* High */;
+var debounceLODTimeout;
+function highLOD() {
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    levelOfDetail = 0 /* High */;
+    tracesDiv.style.pointerEvents = "auto";
+    updateStackTraces();
+}
+function lowLOD() {
+    levelOfDetail = 1 /* Low */;
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    debounceLODTimeout = setTimeout(highLOD, 1000);
+    tracesDiv.style.pointerEvents = "none";
+}
+function updateStackTraces() {
+    var windowWidth = window.innerWidth;
+    var right = left + (windowWidth / pixelPerMs);
+    var nextVisible = new Set();
+    var showTraces = levelOfDetail === 1 /* Low */ ? 64 : 512;
+    for (var i = 0; i < stackTraces.length && nextVisible.size < showTraces; i++) {
+        var trace = stackTraces[i];
+        trace.leftPx = (trace.from - left) * pixelPerMs;
+        trace.rightPx = (trace.to - left) * pixelPerMs;
+        if (trace.rightPx >= 0 && trace.leftPx <= windowWidth && (trace.rightPx - trace.leftPx >= 2)) {
+            nextVisible.add(trace);
+        }
+    }
+    visibleStackTraces.forEach(function (trace) {
+        if (nextVisible.has(trace)) {
+            return;
+        }
+        trace.div.style.visibility = "collapse";
+    });
+    nextVisible.forEach(function (trace) {
+        var div = trace.div, leftPx = trace.leftPx, rightPx = trace.rightPx;
+        div.style.left = Math.max(-5, leftPx) + "px";
+        div.style.right = Math.max(-5, windowWidth - rightPx) + "px";
+        if (!visibleStackTraces.has(trace)) {
+            div.style.visibility = "visible";
+        }
+    });
+    visibleStackTraces = nextVisible;
+}
+function snap(px) {
+    return Math.floor(px) + 0.5;
+}
+function redrawBackground() {
+    rulerBackgroundPatternContext.fillStyle = "#DDD";
+    rulerBackgroundPatternContext.fillRect(0, 0, rulerBackgroundPattern.width, rulerBackgroundPattern.height);
+    timelineBackgroundPatternContext.fillStyle = "#FFF";
+    timelineBackgroundPatternContext.fillRect(0, 0, timelineBackgroundPattern.width, timelineBackgroundPattern.height);
+    rulerBackgroundPatternContext.lineWidth = 1;
+    rulerBackgroundPatternContext.strokeStyle = "#BBB";
+    rulerBackgroundPatternContext.beginPath();
+    rulerBackgroundPatternContext.moveTo(snap(0), 0);
+    rulerBackgroundPatternContext.lineTo(snap(0), rulerBackgroundPattern.height);
+    rulerBackgroundPatternContext.stroke();
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(snap(0), 0);
+    timelineBackgroundPatternContext.lineTo(snap(0), timelineBackgroundPattern.height);
+    timelineBackgroundPatternContext.stroke();
+    // timeline horizontal lines
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(0, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.lineTo(timelineBackgroundPattern.width, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.stroke();
+    rulerBackgroundPatternContext.strokeStyle = "#CCC";
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    for (var i = 1; i < 10; i++) {
+        var x = rulerBackgroundPattern.width / 1000 * i * 100;
+        rulerBackgroundPatternContext.beginPath();
+        rulerBackgroundPatternContext.moveTo(snap(x), rulerBackgroundPattern.height - rulerBackgroundPattern.height * 0.25);
+        rulerBackgroundPatternContext.lineTo(snap(x), rulerBackgroundPattern.height);
+        rulerBackgroundPatternContext.stroke();
+        timelineBackgroundPatternContext.beginPath();
+        timelineBackgroundPatternContext.moveTo(snap(x), 0);
+        timelineBackgroundPatternContext.lineTo(snap(x), timelineBackgroundPattern.height);
+        timelineBackgroundPatternContext.stroke();
+    }
+    var rulerOffset = -Math.round((left - Math.floor(left / 1000) * 1000) * pixelPerMs);
+    var rulerPattern = context.createPattern(rulerBackgroundPattern, "repeat");
+    context.fillStyle = rulerPattern;
+    context.translate(rulerOffset, 0);
+    context.fillRect(-rulerOffset, 0, background.width, 30);
+    context.translate(-rulerOffset, 0);
+    var timelinePattern = context.createPattern(timelineBackgroundPattern, "repeat");
+    context.fillStyle = timelinePattern;
+    context.translate(rulerOffset, 31);
+    context.fillRect(-rulerOffset, 0, background.width, background.height - 30);
+    context.translate(-rulerOffset, -31);
+    // Separators
+    context.lineWidth = 1;
+    context.strokeStyle = "#666";
+    context.beginPath();
+    context.moveTo(0, snap(30));
+    context.lineTo(background.width, snap(30));
+    context.stroke();
+}
+function resize() {
+    background.width = window.innerWidth;
+    background.height = window.innerHeight;
+}
+function resizeRulers() {
+    // Lets try major rules on seconds and minor rules on 100ms.
+    var width = 1000 * pixelPerMs;
+    rulerBackgroundPattern.width = width;
+    rulerBackgroundPattern.height = 30;
+    timelineBackgroundPattern.width = width;
+    timelineBackgroundPattern.height = 21;
+}
+function clampViewPort() {
+    pixelPerMs = Math.max(window.innerWidth / (max - min), pixelPerMs);
+    left = Math.min(Math.max(min, left), max - window.innerWidth / pixelPerMs);
+}
+function focusTrace(ev) {
+    if (suspendClicks) {
+        return;
+    }
+    var trace = this.trace;
+    pixelPerMs = window.innerWidth / (trace.to - trace.from);
+    left = trace.from;
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+}
+window.addEventListener("resize", function () {
+    resize();
+    resizeRulers();
+    clampViewPort();
+    updateStackTraces();
+    redrawBackground();
+});
+window.addEventListener("mousewheel", function (e) {
+    var mousePoint = left + e.clientX / pixelPerMs;
+    pixelPerMs = Math.pow(2, Math.log2(pixelPerMs) + Math.max(-0.25, Math.min(0.25, e.wheelDelta)));
+    left = mousePoint - e.clientX / pixelPerMs;
+    lowLOD();
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+});
+var dragging = false;
+var suspendClicks = false;
+var mouseDown = false;
+var dragOriginXms; // The millisecond at which the chart was grabbed
+var dragOriginXpx;
+window.addEventListener("mousedown", function (e) {
+    dragOriginXms = left + e.clientX / pixelPerMs;
+    dragOriginXpx = e.clientX;
+    mouseDown = true;
+}, true);
+window.addEventListener("mouseup", function (e) {
+    if (dragging) {
+        dragging = false;
+        // Cant find a way to prevent the click action
+        suspendClicks = true;
+        setTimeout(function () { return suspendClicks = false; }, 1);
+    }
+    mouseDown = false;
+});
+window.addEventListener("mousemove", function (e) {
+    if (mouseDown && !dragging && Math.abs(e.clientX - dragOriginXpx) > 8) {
+        dragging = true;
+    }
+    if (dragging) {
+        left = dragOriginXms - e.clientX / pixelPerMs;
+        lowLOD();
+        clampViewPort();
+        redrawBackground();
+        updateStackTraces();
+    }
+});
+clampViewPort();
+resize();
+resizeRulers();
+redrawBackground();
+updateStackTraces();
+
+  </script>
+</body>
+</html>
