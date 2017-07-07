@@ -133,7 +133,7 @@ To further optimize the startup time for the Android version of Practice Buddy t
 require("rxjs");
 require("nativescript-angular/animations");
 ```
-This saves another 200ms. for a total of the startup.
+This saves another 200ms. from the startup.
 
 #### Webpack Bundle Analyzer
 Finding chunks that should be moved from the `bundle.js` to `vendor.js` is easily done using the `webpack-bundle-analyzer` and has been covered in the
