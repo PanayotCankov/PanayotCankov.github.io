@@ -234,3 +234,5 @@ I am not sure how to precisely measure the time in release, but here is how it l
 
 ### What is Next
 The tool takes use of some NativeScript internal knowledge and may be too verbose at one place and leave a gap at another. We will try to polish the position of these manually placed traces. If this turns useful enough we may try to merge the data with the timeline profiling utilities in the Web Inspector and the Chrome Dev Tools.
+
+{% include disqus.html %}
