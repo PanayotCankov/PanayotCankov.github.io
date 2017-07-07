@@ -52,7 +52,7 @@ Here is how the report looks:
 ![timeline-view-screenshot](./timelines/how-it-looks.png)
 
 ## Practice Buddy
-Practice Buddy is a NativeScript + Angular 2 app that enables people train music remotely, it connects trainers and trainees.
+Practice Buddy is a NativeScript + Angular app that enables people train music remotely, it connects trainers and trainees.
 
 Kudos to Jen Looper. The app makes a great example of the timeline and performance improvements for 3.1.0. Here are some times.
 
@@ -72,7 +72,7 @@ The app does:
 Total of about 9sec.
 
 #### Timeline: npm run start-android-bundle --uglify
-The vanilla `tns run` doesn't incorporate the webpack and the Angular 2 tooling. Running the practice buddy app with webpack using:
+The vanilla `tns run` doesn't incorporate the webpack and the Angular tooling. Running the practice buddy app with webpack using:
 ```bash
 npm run start-android-bundle --uglify | timeline-view
 ```
@@ -166,7 +166,7 @@ A total of 3sec. (Don't do the math yet)
 This however shows about 900ms are spent in the main method that are executed only in debug. The waiting for debug time is removed in release. Extracting from the bundle is also removed, as it is part of the live-sync logic, and live-sync is not available in release. So release build would rather take 3sec.
 
 #### Timeline: npm run start-ios-bundle --uglify
-Running the iOS application with webpack, the Angular 2 tooling and uglify gets the maximum out of an iOS application.
+Running the iOS application with webpack, the Angular tooling and uglify gets the maximum out of an iOS application.
 ```bash
 npm run start-ios-bundle --uglify | timeline-view
 ```
@@ -195,12 +195,12 @@ For iOS the best example would be the launch of the calculator app. It follows b
 For android the launch animations are not as smooth as the one for iOS, besides the startup time is twice as long. But you still benefit if you follow these rules.
 
 ### Flash of Unstyled Content
-FOUC is a thing from the past for the CSS community, but your app may experience it too if it involves async operations. For this particular app the app used to start without action bar and draw the status bar white. After Angular 2 generates the home page views, the action bar is generated and styled and the status bar is rendered blue. So it appears as if the status bar is flashing. Fixing this involves changing the `main.ts` by showing the action bar initially:
+FOUC is a thing from the past for the CSS community, but your app may experience it too if it involves async operations. For this particular app the app used to start without action bar and draw the status bar white. After Angular generates the home page views, the action bar is generated and styled and the status bar is rendered blue. So it appears as if the status bar is flashing. Fixing this involves changing the `main.ts` by showing the action bar initially:
 ```javascript
 platformNativeScriptDynamic({ startPageActionBarHidden: false }).bootstrapModule(AppModule);
 ```
 
-Almost perfect! Adding the profile times on `application:didFinishLaunchingWithOptions:` and `viewWillAppear:` will show that the Angular 2 framework will instantiate the native views outside these methods, probably the process chains on a promise. The initial Page will be displayed without content and the actual content will appear a little bit later, probably skipping the fade animation between the launch screen and the in-app view. Just provide adequate styles for the Page and ActionBar views in the app.css instead of somewhere in the main component's css, so that the delay doesn't flash as an unstyled Page.
+Almost perfect! Adding the profile times on `application:didFinishLaunchingWithOptions:` and `viewWillAppear:` will show that the Angular framework will instantiate the native views outside these methods, probably the process chains on a promise. The initial Page will be displayed without content and the actual content will appear a little bit later, probably skipping the fade animation between the launch screen and the in-app view. Just provide adequate styles for the Page and ActionBar views in the app.css instead of somewhere in the main component's css, so that the delay doesn't flash as an unstyled Page.
 
 ### No Startup Keyboards
 Keyboards take time to draw and open with animation. Besides times, they hide part of the login form content on the home page. First time users probably have no accounts. They will need to register and having the keyboard hide the "register" button is bad, even though the "username" field is focused initially. So as a general rule of thumb - avoid displaying automatically software keyboards on the first screens of your app. To disable the keyboard in Android you can configure the `app/App_Resources/Android/AndroidManifest.xml` by adding:
