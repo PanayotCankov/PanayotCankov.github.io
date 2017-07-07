@@ -1,4 +1,4 @@
-# NativeScript 3.1.0 Timeline Introduction
+# NativeScript 3.1.0: Performance Improvements and Timeline Introduction
 Performance has been a high priority feature in {N} all along its development. During the course of development we found ourselves manually instrumenting all of the Objective-C, Java, C, C++ and the JavaScript code several times, but so far these profile traces were kept for internal use only and never made it to the "master".
 
 With 3.1.0 we have "merged" the manual instrumentation and enabled all {N} apps to trace execution times of some key components. Here is how to consume this.
@@ -34,10 +34,10 @@ CONSOLE LOG Timeline: Runtime: require: /app/tns_modules/tns-core-modules/ui/cor
 
 The traces times are the start and end time of the event in milliseconds since 1970.
 
-At one hand we can now use these traces to ensure certain points in the execution of the app are reached in time. On the other you get an overview of the processes that takes place when your app executes.
+You now get an overview of the processes that take place during your app's execution, and how long they take.
 
 ## Tooling
-The logs are hostile and barely readable to the naked eye. There is a small tool that can collect the traces and visualize them in an HTML flame chart. To install the tool:
+In their raw state, the logs are barely readable to the naked eye. There is a small tool that can collect the traces and visualize them in an HTML flame chart. To install the tool:
 ```bash
 npm i -g timeline-view
 ```
@@ -113,7 +113,7 @@ But why do we need assets extraction (read JavaScript files, XML files, CSS file
 This is the bad guy we have up our road-map to deal with in the near future. Basically when you create a function and enclose some objects in JavaScript and pass this as implementation for a Java interface, the NativeScript framework have to keep the Java objects alive while the function is alive in JavaScript. This happens upon GC, NativeScript will walk up the JavaScript function's object graph and root potential Java objects so they survive the Java garbage collection. This haven't been an issue in vanilla NativeScript applications nor the Android Runtime unit tests as the object graphs there are relatively small. Now with the snapshot we try to put all the JavaScript up front in the vendor.js and feed the heap as early as possible.
 
 #### What was the V8 Snapshot Again?
-There is an extensive blog of what snapshot is and how to enable it by Ivan Buhov, [go read it](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot).
+There is an extensive blog of [what snapshots are and how to enable them by Ivan Buhov](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot).
 
 What the snapshot does is to run a command line tool on your mac, execute all the JavaScript from your `vendor.js` in a V8 instance. Then capture the in memory objects into a big (increases app size) blob. When the app starts, instead of parsing and executing the JavaScript, the app just loads into memory the blob and continues.
 
@@ -183,7 +183,7 @@ That is a little under a sec.
 It is pretty plain and boring compared to the previous and the android versions. Bundling packs all files in a single file reducing IO, and the uglification has much higher impact since JavaScriptCore on iOS does no JIT compilation. Subtracting the 500ms. debug. The bundle extraction happens again but it is fast, in the previous case it was slow because of the number of files.
 
 ## Sweet Awesomeness
-With fast times comes great responsibility. Now that your app starts under a second on iOS and somewhat acceptable two seconds on Android, how do we make the best impression for the transition from the SpringBoard to your app's content? You can't put your app's slogan nor a fancy animation since there is simply not enough time for the user to consume it.
+With fast times comes great responsibility. Now that your app starts under a second on iOS and acceptable two seconds on Android, how do we make the best impression for the transition from the SpringBoard to your app's content? You can't put your app's slogan nor a fancy animation since there is simply not enough time for the user to consume it.
 
 ### Icons and Launch Screens
 Icons must morph gently into launch screens and the launch screens must morph gently into your app's content. Keep that in mind when designing you assets.

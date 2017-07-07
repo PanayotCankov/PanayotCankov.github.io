@@ -1,1 +1,1 @@
- - [NativeScript 3.1.0 Timeline](./nativescript-3.1.0-timeline)
+ - [NativeScript 3.1.0: Performance Improvements and Timeline Introduction](./nativescript-3.1.0-timeline)
