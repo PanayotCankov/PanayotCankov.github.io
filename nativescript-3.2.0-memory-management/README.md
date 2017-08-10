@@ -125,4 +125,15 @@ The future implementation IMHO:
  - Could address the quicker release for big Java instances, perhaps by adding a method to implicitly make the reference to the Java instance weak.
  - Could address the early collection of regular JavaScript instances, perhaps by adding a method to keep the JavaScript instance alive until the Java instance is collected (this may lead to leaks if misused).
 
+For POC here are results of experiments removing the MarkReachableObjects.
+
+ - QSF vanilla NativeScript app:
+    - [marking](./reports/qsf-marking.html)
+    - [no marking](./reports/qsf-no-marking.html)
+ - PracticeBuddy
+    - [marking](./reports/pb-marking.html)
+    - [no marking](./reports/pb-no-marking.html)
+
+Unit tests seem to pass, but stopping MarkReachableObjects introduces a flaw, and allows Java instances to be collected too early.
+
 {% include disqus.html %}

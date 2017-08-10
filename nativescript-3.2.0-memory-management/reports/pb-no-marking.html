@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profiling</title>
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.trace {
+    position: absolute;
+    border: 1px solid black;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #DDD;
+    cursor: default;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.trace.Modules {
+    background-color: #BFF;
+}
+.trace.Runtime {
+    background-color: #FFB;
+}
+.trace:hover {
+    background-color: #FFF;
+    border-color: orange;
+    z-index: 1;
+    box-shadow: 0px 1px 5px black;
+}
+</style>
+</head>
+<body>
+  <script>
+var timeline = [{"domain":"Runtime","name":"Extracting assets","from":1502366236634,"to":1502366236883},{"domain":"Runtime","name":"Runtime.init","from":1502366236888,"to":1502366236931},{"domain":"Runtime","name":"LoadModule /data/data/com.ladeezfirstmedia.practicebuddy/files/app/tns-java-classes.js","from":1502366236952.471,"to":1502366236973.949},{"domain":"Runtime","name":"RequireCallback /data/data/com.ladeezfirstmedia.practicebuddy/files/app/tns-java-classes.js","from":1502366236952.159,"to":1502366236974.037},{"domain":"Runtime","name":"void tns::ModuleInternal::Load(const string &)","from":1502366236947.98,"to":1502366236974.061},{"domain":"Runtime","name":"RuntimeHelper.initRuntime","from":1502366236616,"to":1502366236974},{"domain":"Runtime","name":"Compile, no cache","from":1502366236980.724,"to":1502366237007.625},{"domain":"Runtime","name":"LoadScript /data/data/com.ladeezfirstmedia.practicebuddy/files/app/bundle.js","from":1502366236976.179,"to":1502366237007.687},{"domain":"Modules","name":"r.createNavigationEntry","from":1502366237088,"to":1502366237088},{"domain":"Modules","name":"r.bootstrapApp","from":1502366237088,"to":1502366237106},{"domain":"Modules","name":"r.bootstrapModuleFactory","from":1502366237087,"to":1502366237106},{"domain":"Runtime","name":"LoadModule /data/data/com.ladeezfirstmedia.practicebuddy/files/app/bundle.js","from":1502366236976.169,"to":1502366237106.933},{"domain":"Runtime","name":"RequireCallback ./bundle","from":1502366236975.99,"to":1502366237106.974},{"domain":"Runtime","name":"LoadModule /data/data/com.ladeezfirstmedia.practicebuddy/files/app/starter.js","from":1502366236975.41,"to":1502366237106.995},{"domain":"Runtime","name":"RequireCallback /data/data/com.ladeezfirstmedia.practicebuddy/files/app/./starter.js","from":1502366236975.303,"to":1502366237107.024},{"domain":"Runtime","name":"void tns::ModuleInternal::Load(const string &)","from":1502366236975.218,"to":1502366237107.042},{"domain":"Runtime","name":"Runtime.run","from":1502366236974,"to":1502366237107},{"domain":"Runtime","name":"NaitveScriptApplication.onCreate","from":1502366236615,"to":1502366237107},{"domain":"Runtime","name":"Materizlizing class: android/content/Intent","from":1502366237113.885,"to":1502366237142.678},{"domain":"Modules","name":"t.readTextSync","from":1502366237274,"to":1502366237278},{"domain":"Modules","name":"\"style-scope\".loadCss","from":1502366237268,"to":1502366237301},{"domain":"Modules","name":"\"style-scope\".loadCssOnLaunch","from":1502366237268,"to":1502366237302},{"domain":"Runtime","name":"Materizlizing class: android/view/View","from":1502366237369.557,"to":1502366237391.558},{"domain":"Runtime","name":"Materizlizing class: android/view/ViewGroup","from":1502366237369.541,"to":1502366237396.017},{"domain":"Runtime","name":"Materizlizing class: android/widget/FrameLayout","from":1502366237369.518,"to":1502366237396.697},{"domain":"Runtime","name":"Materizlizing class: com/android/internal/policy/DecorView","from":1502366237369.453,"to":1502366237397.537},{"domain":"Modules","name":"onActivityCreated","from":1502366237304,"to":1502366237401},{"domain":"Modules","name":"t._setupUI","from":1502366237401,"to":1502366237408},{"domain":"Modules","name":"e._createSelectors","from":1502366237413,"to":1502366237415},{"domain":"Modules","name":"t.applyCssState","from":1502366237421,"to":1502366237426},{"domain":"Modules","name":"t._setCssState","from":1502366237420,"to":1502366237426},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237418,"to":1502366237426},{"domain":"Modules","name":"t._setStyleScope","from":1502366237418,"to":1502366237426},{"domain":"Modules","name":"t._addView","from":1502366237417,"to":1502366237427},{"domain":"Modules","name":"t.applyCssState","from":1502366237430,"to":1502366237432},{"domain":"Modules","name":"t._setCssState","from":1502366237429,"to":1502366237432},{"domain":"Modules","name":"t.applyCssState","from":1502366237433,"to":1502366237434},{"domain":"Modules","name":"t._setCssState","from":1502366237433,"to":1502366237434},{"domain":"Modules","name":"e.onCreate","from":1502366237113,"to":1502366237436},{"domain":"Modules","name":"onActivityStarted","from":1502366237440,"to":1502366237488},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366237492,"to":1502366237492},{"domain":"Modules","name":"t.onLoaded","from":1502366237492,"to":1502366237493},{"domain":"Modules","name":"View.onLoaded","from":1502366237492,"to":1502366237493},{"domain":"Modules","name":"e.onStart","from":1502366237439,"to":1502366237493},{"domain":"Modules","name":"nativescript-angular/platform-common.initHandler","from":1502366237498,"to":1502366237533},{"domain":"Modules","name":"t._navigateCore","from":1502366237533,"to":1502366237556},{"domain":"Modules","name":"onActivityResumed","from":1502366237496,"to":1502366237556},{"domain":"Modules","name":"t.selectRootElement","from":1502366237574,"to":1502366237574},{"domain":"Modules","name":"t.createElement","from":1502366237578,"to":1502366237580},{"domain":"Modules","name":"t.applyCssState","from":1502366237583,"to":1502366237583},{"domain":"Modules","name":"t._setCssState","from":1502366237583,"to":1502366237583},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237582,"to":1502366237583},{"domain":"Modules","name":"t._setStyleScope","from":1502366237582,"to":1502366237584},{"domain":"Modules","name":"t._addView","from":1502366237582,"to":1502366237584},{"domain":"Modules","name":"t.appendChild","from":1502366237581,"to":1502366237584},{"domain":"Modules","name":"t.setAttribute","from":1502366237587,"to":1502366237590},{"domain":"Modules","name":"nativescript-angular/platform-common.postBootstrapAction","from":1502366237660,"to":1502366237660},{"domain":"Modules","name":"t.createElement","from":1502366237674,"to":1502366237675},{"domain":"Modules","name":"\"style-scope\".onCssChanged","from":1502366237683,"to":1502366237690},{"domain":"Modules","name":"\"renderer\".addStyleToCss","from":1502366237683,"to":1502366237690},{"domain":"Modules","name":"r.addStyles","from":1502366237682,"to":1502366237691},{"domain":"Modules","name":"t.setAttribute","from":1502366237691,"to":1502366237694},{"domain":"Modules","name":"t.createElement","from":1502366237698,"to":1502366237698},{"domain":"Modules","name":"t.setAttribute","from":1502366237699,"to":1502366237699},{"domain":"Modules","name":"t.appendChild","from":1502366237699,"to":1502366237700},{"domain":"Modules","name":"t.setAttribute","from":1502366237700,"to":1502366237700},{"domain":"Modules","name":"t.setAttribute","from":1502366237700,"to":1502366237701},{"domain":"Modules","name":"t.applyCssState","from":1502366237702,"to":1502366237703},{"domain":"Modules","name":"t._setCssState","from":1502366237702,"to":1502366237703},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237702,"to":1502366237703},{"domain":"Modules","name":"t._setStyleScope","from":1502366237702,"to":1502366237703},{"domain":"Modules","name":"e._createSelectors","from":1502366237703,"to":1502366237704},{"domain":"Modules","name":"t.applyCssState","from":1502366237707,"to":1502366237708},{"domain":"Modules","name":"t._setCssState","from":1502366237706,"to":1502366237708},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237703,"to":1502366237708},{"domain":"Modules","name":"t._setStyleScope","from":1502366237703,"to":1502366237708},{"domain":"Modules","name":"t._addView","from":1502366237703,"to":1502366237709},{"domain":"Modules","name":"t.createText","from":1502366237709,"to":1502366237710},{"domain":"Modules","name":"t.appendChild","from":1502366237710,"to":1502366237710},{"domain":"Modules","name":"t.createElement","from":1502366237710,"to":1502366237720},{"domain":"Modules","name":"t.setAttribute","from":1502366237720,"to":1502366237721},{"domain":"Modules","name":"t._addView","from":1502366237721,"to":1502366237721},{"domain":"Modules","name":"t.appendChild","from":1502366237721,"to":1502366237721},{"domain":"Modules","name":"t.createText","from":1502366237722,"to":1502366237722},{"domain":"Modules","name":"t.appendChild","from":1502366237722,"to":1502366237722},{"domain":"Modules","name":"t.createElement","from":1502366237722,"to":1502366237725},{"domain":"Modules","name":"t.setAttribute","from":1502366237725,"to":1502366237726},{"domain":"Modules","name":"t._addView","from":1502366237726,"to":1502366237727},{"domain":"Modules","name":"t.appendChild","from":1502366237726,"to":1502366237727},{"domain":"Modules","name":"t.createText","from":1502366237727,"to":1502366237727},{"domain":"Modules","name":"t.appendChild","from":1502366237727,"to":1502366237727},{"domain":"Modules","name":"t.createElement","from":1502366237727,"to":1502366237737},{"domain":"Modules","name":"t.setAttribute","from":1502366237737,"to":1502366237737},{"domain":"Modules","name":"t._addView","from":1502366237738,"to":1502366237738},{"domain":"Modules","name":"t.appendChild","from":1502366237738,"to":1502366237738},{"domain":"Modules","name":"t.setAttribute","from":1502366237738,"to":1502366237739},{"domain":"Modules","name":"t.setAttribute","from":1502366237739,"to":1502366237739},{"domain":"Modules","name":"t.setAttribute","from":1502366237739,"to":1502366237739},{"domain":"Modules","name":"t.createText","from":1502366237740,"to":1502366237740},{"domain":"Modules","name":"t.appendChild","from":1502366237740,"to":1502366237740},{"domain":"Modules","name":"t.createElement","from":1502366237740,"to":1502366237743},{"domain":"Modules","name":"t.setAttribute","from":1502366237743,"to":1502366237745},{"domain":"Modules","name":"t._addView","from":1502366237745,"to":1502366237745},{"domain":"Modules","name":"t.appendChild","from":1502366237745,"to":1502366237745},{"domain":"Modules","name":"t.setAttribute","from":1502366237745,"to":1502366237745},{"domain":"Modules","name":"t.setAttribute","from":1502366237746,"to":1502366237746},{"domain":"Modules","name":"t.setAttribute","from":1502366237746,"to":1502366237746},{"domain":"Modules","name":"t.setAttribute","from":1502366237747,"to":1502366237747},{"domain":"Modules","name":"t.listen","from":1502366237747,"to":1502366237748},{"domain":"Modules","name":"t.listen","from":1502366237748,"to":1502366237749},{"domain":"Modules","name":"t.listen","from":1502366237749,"to":1502366237749},{"domain":"Modules","name":"t.createText","from":1502366237753,"to":1502366237753},{"domain":"Modules","name":"t.appendChild","from":1502366237753,"to":1502366237753},{"domain":"Modules","name":"t.createElement","from":1502366237753,"to":1502366237753},{"domain":"Modules","name":"t.setAttribute","from":1502366237753,"to":1502366237753},{"domain":"Modules","name":"t._addView","from":1502366237753,"to":1502366237754},{"domain":"Modules","name":"t.appendChild","from":1502366237753,"to":1502366237754},{"domain":"Modules","name":"t.setAttribute","from":1502366237754,"to":1502366237754},{"domain":"Modules","name":"t.setAttribute","from":1502366237754,"to":1502366237754},{"domain":"Modules","name":"t.listen","from":1502366237754,"to":1502366237754},{"domain":"Modules","name":"t.listen","from":1502366237754,"to":1502366237755},{"domain":"Modules","name":"t.listen","from":1502366237755,"to":1502366237755},{"domain":"Modules","name":"t.createText","from":1502366237757,"to":1502366237757},{"domain":"Modules","name":"t.appendChild","from":1502366237757,"to":1502366237757},{"domain":"Modules","name":"t.createElement","from":1502366237757,"to":1502366237762},{"domain":"Modules","name":"t.setAttribute","from":1502366237762,"to":1502366237763},{"domain":"Modules","name":"t._addView","from":1502366237764,"to":1502366237764},{"domain":"Modules","name":"t.appendChild","from":1502366237764,"to":1502366237764},{"domain":"Modules","name":"t.applyCssState","from":1502366237766,"to":1502366237766},{"domain":"Modules","name":"t._setCssState","from":1502366237766,"to":1502366237766},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237766,"to":1502366237766},{"domain":"Modules","name":"t.setAttribute","from":1502366237764,"to":1502366237766},{"domain":"Modules","name":"t.listen","from":1502366237767,"to":1502366237767},{"domain":"Modules","name":"t.createText","from":1502366237767,"to":1502366237767},{"domain":"Modules","name":"t.appendChild","from":1502366237767,"to":1502366237767},{"domain":"Modules","name":"t.createElement","from":1502366237767,"to":1502366237767},{"domain":"Modules","name":"t.setAttribute","from":1502366237767,"to":1502366237767},{"domain":"Modules","name":"t._addView","from":1502366237767,"to":1502366237767},{"domain":"Modules","name":"t.appendChild","from":1502366237767,"to":1502366237767},{"domain":"Modules","name":"t.applyCssState","from":1502366237768,"to":1502366237768},{"domain":"Modules","name":"t._setCssState","from":1502366237768,"to":1502366237768},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237768,"to":1502366237768},{"domain":"Modules","name":"t.setAttribute","from":1502366237768,"to":1502366237768},{"domain":"Modules","name":"t.listen","from":1502366237768,"to":1502366237768},{"domain":"Modules","name":"t.createText","from":1502366237768,"to":1502366237768},{"domain":"Modules","name":"t.appendChild","from":1502366237769,"to":1502366237769},{"domain":"Modules","name":"t.createElement","from":1502366237769,"to":1502366237769},{"domain":"Modules","name":"t.setAttribute","from":1502366237769,"to":1502366237769},{"domain":"Modules","name":"t._addView","from":1502366237769,"to":1502366237769},{"domain":"Modules","name":"t.appendChild","from":1502366237769,"to":1502366237769},{"domain":"Modules","name":"t.applyCssState","from":1502366237770,"to":1502366237770},{"domain":"Modules","name":"t._setCssState","from":1502366237770,"to":1502366237770},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237770,"to":1502366237770},{"domain":"Modules","name":"t.setAttribute","from":1502366237770,"to":1502366237770},{"domain":"Modules","name":"t.setAttribute","from":1502366237770,"to":1502366237771},{"domain":"Modules","name":"t.setAttribute","from":1502366237771,"to":1502366237771},{"domain":"Modules","name":"t.listen","from":1502366237771,"to":1502366237771},{"domain":"Modules","name":"t.createText","from":1502366237771,"to":1502366237771},{"domain":"Modules","name":"t.appendChild","from":1502366237771,"to":1502366237771},{"domain":"Modules","name":"t.createText","from":1502366237771,"to":1502366237771},{"domain":"Modules","name":"t.appendChild","from":1502366237771,"to":1502366237771},{"domain":"Modules","name":"t.createText","from":1502366237772,"to":1502366237772},{"domain":"Modules","name":"t.appendChild","from":1502366237772,"to":1502366237772},{"domain":"Modules","name":"t.parentNode","from":1502366237773,"to":1502366237773},{"domain":"Modules","name":"t.nextSibling","from":1502366237774,"to":1502366237774},{"domain":"Modules","name":"t.applyCssState","from":1502366237776,"to":1502366237776},{"domain":"Modules","name":"t._setCssState","from":1502366237776,"to":1502366237776},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237776,"to":1502366237776},{"domain":"Modules","name":"t._setStyleScope","from":1502366237775,"to":1502366237776},{"domain":"Modules","name":"t.applyCssState","from":1502366237777,"to":1502366237785},{"domain":"Modules","name":"t._setCssState","from":1502366237777,"to":1502366237785},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237777,"to":1502366237785},{"domain":"Modules","name":"t.applyCssState","from":1502366237786,"to":1502366237786},{"domain":"Modules","name":"t._setCssState","from":1502366237786,"to":1502366237786},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237785,"to":1502366237786},{"domain":"Modules","name":"t.applyCssState","from":1502366237787,"to":1502366237787},{"domain":"Modules","name":"t._setCssState","from":1502366237787,"to":1502366237787},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237787,"to":1502366237787},{"domain":"Modules","name":"t.applyCssState","from":1502366237789,"to":1502366237791},{"domain":"Modules","name":"t._setCssState","from":1502366237788,"to":1502366237791},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237787,"to":1502366237791},{"domain":"Modules","name":"t._setStyleScope","from":1502366237787,"to":1502366237791},{"domain":"Modules","name":"t.applyCssState","from":1502366237792,"to":1502366237797},{"domain":"Modules","name":"t._setCssState","from":1502366237792,"to":1502366237797},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237791,"to":1502366237797},{"domain":"Modules","name":"t._setStyleScope","from":1502366237791,"to":1502366237798},{"domain":"Modules","name":"t.applyCssState","from":1502366237798,"to":1502366237799},{"domain":"Modules","name":"t._setCssState","from":1502366237798,"to":1502366237800},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237798,"to":1502366237800},{"domain":"Modules","name":"t._setStyleScope","from":1502366237798,"to":1502366237800},{"domain":"Modules","name":"t.applyCssState","from":1502366237801,"to":1502366237804},{"domain":"Modules","name":"t._setCssState","from":1502366237801,"to":1502366237804},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237800,"to":1502366237804},{"domain":"Modules","name":"t._setStyleScope","from":1502366237800,"to":1502366237804},{"domain":"Modules","name":"t.applyCssState","from":1502366237805,"to":1502366237805},{"domain":"Modules","name":"t._setCssState","from":1502366237805,"to":1502366237805},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237804,"to":1502366237805},{"domain":"Modules","name":"t._setStyleScope","from":1502366237804,"to":1502366237806},{"domain":"Modules","name":"t.applyCssState","from":1502366237806,"to":1502366237807},{"domain":"Modules","name":"t._setCssState","from":1502366237806,"to":1502366237807},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237806,"to":1502366237807},{"domain":"Modules","name":"t._setStyleScope","from":1502366237806,"to":1502366237807},{"domain":"Modules","name":"t._setStyleScope","from":1502366237787,"to":1502366237807},{"domain":"Modules","name":"t._setStyleScope","from":1502366237785,"to":1502366237807},{"domain":"Modules","name":"t._setStyleScope","from":1502366237777,"to":1502366237807},{"domain":"Modules","name":"t._addView","from":1502366237777,"to":1502366237808},{"domain":"Modules","name":"t.insertBefore","from":1502366237775,"to":1502366237808},{"domain":"Modules","name":"t.setAttribute","from":1502366237819,"to":1502366237819},{"domain":"Modules","name":"t.setAttribute","from":1502366237820,"to":1502366237820},{"domain":"Modules","name":"t.applyCssState","from":1502366237823,"to":1502366237825},{"domain":"Modules","name":"t._setCssState","from":1502366237822,"to":1502366237825},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237822,"to":1502366237825},{"domain":"Modules","name":"t.applyCssState","from":1502366237825,"to":1502366237826},{"domain":"Modules","name":"t._setCssState","from":1502366237825,"to":1502366237826},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237825,"to":1502366237826},{"domain":"Modules","name":"t.applyCssState","from":1502366237827,"to":1502366237828},{"domain":"Modules","name":"t._setCssState","from":1502366237826,"to":1502366237828},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237826,"to":1502366237828},{"domain":"Modules","name":"t.applyCssState","from":1502366237828,"to":1502366237829},{"domain":"Modules","name":"t._setCssState","from":1502366237828,"to":1502366237829},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237828,"to":1502366237829},{"domain":"Modules","name":"t.applyCssState","from":1502366237829,"to":1502366237832},{"domain":"Modules","name":"t._setCssState","from":1502366237829,"to":1502366237832},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237829,"to":1502366237832},{"domain":"Modules","name":"t.applyCssState","from":1502366237832,"to":1502366237833},{"domain":"Modules","name":"t._setCssState","from":1502366237832,"to":1502366237833},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237832,"to":1502366237833},{"domain":"Modules","name":"t.applyCssState","from":1502366237833,"to":1502366237834},{"domain":"Modules","name":"t._setCssState","from":1502366237833,"to":1502366237834},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237833,"to":1502366237834},{"domain":"Modules","name":"t.setProperty","from":1502366237822,"to":1502366237834},{"domain":"Modules","name":"t.applyCssState","from":1502366237836,"to":1502366237838},{"domain":"Modules","name":"t._setCssState","from":1502366237836,"to":1502366237838},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237836,"to":1502366237838},{"domain":"Modules","name":"t.addClass","from":1502366237835,"to":1502366237838},{"domain":"Modules","name":"t.removeClass","from":1502366237839,"to":1502366237840},{"domain":"Modules","name":"t.applyCssState","from":1502366237840,"to":1502366237841},{"domain":"Modules","name":"t._setCssState","from":1502366237840,"to":1502366237841},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237840,"to":1502366237841},{"domain":"Modules","name":"t.addClass","from":1502366237840,"to":1502366237841},{"domain":"Modules","name":"t.removeClass","from":1502366237842,"to":1502366237842},{"domain":"Modules","name":"t.applyCssState","from":1502366237843,"to":1502366237844},{"domain":"Modules","name":"t._setCssState","from":1502366237842,"to":1502366237844},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237842,"to":1502366237844},{"domain":"Modules","name":"t.addClass","from":1502366237842,"to":1502366237844},{"domain":"Modules","name":"t.removeClass","from":1502366237845,"to":1502366237845},{"domain":"Modules","name":"t.removeClass","from":1502366237845,"to":1502366237845},{"domain":"Modules","name":"t.applyCssState","from":1502366237845,"to":1502366237846},{"domain":"Modules","name":"t._setCssState","from":1502366237845,"to":1502366237846},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237845,"to":1502366237846},{"domain":"Modules","name":"t.addClass","from":1502366237845,"to":1502366237846},{"domain":"Modules","name":"t.removeClass","from":1502366237846,"to":1502366237846},{"domain":"Modules","name":"t.applyCssState","from":1502366237847,"to":1502366237847},{"domain":"Modules","name":"t._setCssState","from":1502366237847,"to":1502366237847},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237847,"to":1502366237847},{"domain":"Modules","name":"t.addClass","from":1502366237847,"to":1502366237848},{"domain":"Modules","name":"t.removeClass","from":1502366237848,"to":1502366237848},{"domain":"Modules","name":"t.applyCssState","from":1502366237848,"to":1502366237848},{"domain":"Modules","name":"t._setCssState","from":1502366237848,"to":1502366237849},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366237848,"to":1502366237849},{"domain":"Modules","name":"t.addClass","from":1502366237848,"to":1502366237849},{"domain":"Modules","name":"t.removeClass","from":1502366237849,"to":1502366237849},{"domain":"Modules","name":"t.removeClass","from":1502366237849,"to":1502366237849},{"domain":"Modules","name":"t.setProperty","from":1502366237849,"to":1502366237849},{"domain":"Modules","name":"t.setProperty","from":1502366237849,"to":1502366237849},{"domain":"Modules","name":"t.setProperty","from":1502366237849,"to":1502366237850},{"domain":"Modules","name":"e.activateWith","from":1502366237671,"to":1502366237850},{"domain":"Modules","name":"e.onCreate","from":1502366237867,"to":1502366237867},{"domain":"Modules","name":"t._setupUI","from":1502366237918,"to":1502366237927},{"domain":"Modules","name":"t._setupUI","from":1502366237927,"to":1502366237951},{"domain":"Modules","name":"t._setupUI","from":1502366237951,"to":1502366237958},{"domain":"Modules","name":"Button.createNativeView","from":1502366237959,"to":1502366237965},{"domain":"Modules","name":"t._setupUI","from":1502366237959,"to":1502366237967},{"domain":"Modules","name":"Button.createNativeView","from":1502366237967,"to":1502366237969},{"domain":"Modules","name":"t._setupUI","from":1502366237967,"to":1502366237970},{"domain":"Modules","name":"Button.createNativeView","from":1502366237970,"to":1502366237972},{"domain":"Modules","name":"t._setupUI","from":1502366237970,"to":1502366237973},{"domain":"Modules","name":"t._setupUI","from":1502366237914,"to":1502366237973},{"domain":"Modules","name":"t._setupUI","from":1502366237878,"to":1502366237973},{"domain":"Modules","name":"t._setupUI","from":1502366237877,"to":1502366237973},{"domain":"Modules","name":"t._setupUI","from":1502366237973,"to":1502366238001},{"domain":"Modules","name":"t._setupUI","from":1502366237870,"to":1502366238001},{"domain":"Modules","name":"t.applyCssState","from":1502366238007,"to":1502366238007},{"domain":"Modules","name":"t._setCssState","from":1502366238007,"to":1502366238008},{"domain":"Modules","name":"t.applyCssState","from":1502366238008,"to":1502366238009},{"domain":"Modules","name":"t._setCssState","from":1502366238008,"to":1502366238009},{"domain":"Modules","name":"t.applyCssState","from":1502366238009,"to":1502366238009},{"domain":"Modules","name":"t._setCssState","from":1502366238009,"to":1502366238009},{"domain":"Modules","name":"t.applyCssState","from":1502366238010,"to":1502366238011},{"domain":"Modules","name":"t._setCssState","from":1502366238010,"to":1502366238011},{"domain":"Modules","name":"t.applyCssState","from":1502366238012,"to":1502366238012},{"domain":"Modules","name":"t._setCssState","from":1502366238012,"to":1502366238012},{"domain":"Modules","name":"t.applyCssState","from":1502366238012,"to":1502366238013},{"domain":"Modules","name":"t._setCssState","from":1502366238012,"to":1502366238013},{"domain":"Modules","name":"t.applyCssState","from":1502366238013,"to":1502366238015},{"domain":"Modules","name":"t._setCssState","from":1502366238013,"to":1502366238015},{"domain":"Modules","name":"t.applyCssState","from":1502366238015,"to":1502366238017},{"domain":"Modules","name":"t._setCssState","from":1502366238015,"to":1502366238017},{"domain":"Modules","name":"t.applyCssState","from":1502366238017,"to":1502366238017},{"domain":"Modules","name":"t._setCssState","from":1502366238017,"to":1502366238018},{"domain":"Modules","name":"t.applyCssState","from":1502366238018,"to":1502366238019},{"domain":"Modules","name":"t._setCssState","from":1502366238018,"to":1502366238019},{"domain":"Modules","name":"t.applyCssState","from":1502366238019,"to":1502366238019},{"domain":"Modules","name":"t._setCssState","from":1502366238019,"to":1502366238019},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238020,"to":1502366238056},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238056,"to":1502366238057},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238057,"to":1502366238063},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238063,"to":1502366238065},{"domain":"Modules","name":"t.onLoaded","from":1502366238063,"to":1502366238065},{"domain":"Modules","name":"View.onLoaded","from":1502366238063,"to":1502366238066},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238066,"to":1502366238098},{"domain":"Modules","name":"t.onLoaded","from":1502366238066,"to":1502366238099},{"domain":"Modules","name":"View.onLoaded","from":1502366238066,"to":1502366238101},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238101,"to":1502366238106},{"domain":"Modules","name":"t.onLoaded","from":1502366238101,"to":1502366238106},{"domain":"Modules","name":"View.onLoaded","from":1502366238101,"to":1502366238107},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238107,"to":1502366238116},{"domain":"Modules","name":"t.onLoaded","from":1502366238107,"to":1502366238117},{"domain":"Modules","name":"View.onLoaded","from":1502366238107,"to":1502366238117},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238117,"to":1502366238122},{"domain":"Modules","name":"t.onLoaded","from":1502366238117,"to":1502366238122},{"domain":"Modules","name":"View.onLoaded","from":1502366238117,"to":1502366238123},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238123,"to":1502366238128},{"domain":"Modules","name":"t.onLoaded","from":1502366238123,"to":1502366238128},{"domain":"Modules","name":"View.onLoaded","from":1502366238123,"to":1502366238129},{"domain":"Modules","name":"t.onLoaded","from":1502366238057,"to":1502366238129},{"domain":"Modules","name":"View.onLoaded","from":1502366238057,"to":1502366238129},{"domain":"Modules","name":"t.onLoaded","from":1502366238056,"to":1502366238129},{"domain":"Modules","name":"View.onLoaded","from":1502366238056,"to":1502366238129},{"domain":"Modules","name":"t.onLoaded","from":1502366238056,"to":1502366238129},{"domain":"Modules","name":"t.onLoaded","from":1502366238056,"to":1502366238129},{"domain":"Modules","name":"View.onLoaded","from":1502366238056,"to":1502366238129},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238129,"to":1502366238135},{"domain":"Modules","name":"t.onLoaded","from":1502366238129,"to":1502366238135},{"domain":"Modules","name":"View.onLoaded","from":1502366238129,"to":1502366238135},{"domain":"Modules","name":"t.onLoaded","from":1502366238020,"to":1502366238136},{"domain":"Modules","name":"View.onLoaded","from":1502366238020,"to":1502366238136},{"domain":"Modules","name":"t.onLoaded","from":1502366238002,"to":1502366238137},{"domain":"Modules","name":"Page.onLoaded","from":1502366238001,"to":1502366238137},{"domain":"Modules","name":"t._addView","from":1502366237870,"to":1502366238137},{"domain":"Modules","name":"e.onCreateView","from":1502366237869,"to":1502366238138},{"domain":"Modules","name":"e.onCreateAnimator","from":1502366238139,"to":1502366238139},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238159,"to":1502366238160},{"domain":"Modules","name":"t.applyCssState","from":1502366238157,"to":1502366238160},{"domain":"Modules","name":"t._setCssState","from":1502366238157,"to":1502366238160},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366238157,"to":1502366238161},{"domain":"Modules","name":"t.removeClass","from":1502366238157,"to":1502366238161},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238162,"to":1502366238162},{"domain":"Modules","name":"t.applyCssState","from":1502366238161,"to":1502366238162},{"domain":"Modules","name":"t._setCssState","from":1502366238161,"to":1502366238163},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366238161,"to":1502366238163},{"domain":"Modules","name":"t.addClass","from":1502366238161,"to":1502366238163},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238166,"to":1502366238166},{"domain":"Modules","name":"t.applyCssState","from":1502366238164,"to":1502366238166},{"domain":"Modules","name":"t._setCssState","from":1502366238164,"to":1502366238166},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366238164,"to":1502366238166},{"domain":"Modules","name":"t.removeClass","from":1502366238164,"to":1502366238167},{"domain":"Modules","name":"\"properties\".initNativeView","from":1502366238169,"to":1502366238169},{"domain":"Modules","name":"t.applyCssState","from":1502366238167,"to":1502366238169},{"domain":"Modules","name":"t._setCssState","from":1502366238167,"to":1502366238169},{"domain":"Modules","name":"t._applyStyleFromScope","from":1502366238167,"to":1502366238169},{"domain":"Modules","name":"t.addClass","from":1502366238167,"to":1502366238170},{"name":"Startup time...","from":1502366236460,"to":1502366238217},{"from":1502366236460,"to":1502366238217,"name":"ALL"}];
+var background = document.createElement('canvas');
+var context = background.getContext("2d");
+var traceShadow = document.createElement('canvas');
+var traceShadowContext = traceShadow.getContext("2d");
+var rulerBackgroundPattern = document.createElement('canvas');
+var rulerBackgroundPatternContext = rulerBackgroundPattern.getContext("2d");
+var timelineBackgroundPattern = document.createElement('canvas');
+var timelineBackgroundPatternContext = timelineBackgroundPattern.getContext("2d");
+var chart = document.createElement('div');
+chart.id = "chart";
+chart.appendChild(background);
+var tracesDiv = document.createElement('div');
+tracesDiv.id = "traces";
+chart.appendChild(tracesDiv);
+document.body.appendChild(chart);
+function createStackTraces(traces) {
+    traces = traces.slice(0).sort(function (a, b) {
+        if (a.from < b.from) {
+            return -1;
+        }
+        else if (a.from === b.from) {
+            if (a.to > b.to) {
+                return -1;
+            }
+            else if (a.to === b.to) {
+                return 0;
+            }
+            else {
+                return 1;
+            }
+        }
+        else {
+            return 1;
+        }
+    });
+    var traceAtDepth = [];
+    var stackedTraces = traces.map(function (original) {
+        var from = original.from, to = original.to, name = original.name, domain = original.domain;
+        var trace = { from: from, to: to };
+        var depth;
+        for (var i = 0; i <= traceAtDepth.length; i++) {
+            if (traceAtDepth[i] === undefined || traceAtDepth[i].to <= from) {
+                depth = i;
+                traceAtDepth[i] = trace;
+                break;
+            }
+        }
+        var parent;
+        for (var i = depth - 1; i >= 0; i--) {
+            var potentialParent = traceAtDepth[i];
+            if (potentialParent.from <= trace.from && potentialParent.to >= trace.to) {
+                trace.parent = parent = potentialParent;
+                break;
+            }
+        }
+        var importance;
+        if (parent) {
+            // If it is very big, or very small - it does not matter, if it is about half its parent then it is important.
+            var ratio = (trace.to - trace.from) / (parent.to - parent.from);
+            importance = depth <= 1 ? 1 : 0.5 - Math.cos(2 * Math.PI * ratio) * 0.5;
+        }
+        else {
+            importance = 1;
+        }
+        var innerText = name + " " + Math.round(to - from) + "ms";
+        var title = name + " " + (to - from) + "ms " + importance;
+        var visible = false;
+        var div = document.createElement('div');
+        div.className = "trace " + domain;
+        tracesDiv.appendChild(div);
+        div.title = title;
+        div.innerText = innerText;
+        div.style.visibility = "hidden";
+        div.style.top = 30 + depth * 21 + "px";
+        div.addEventListener("click", focusTrace);
+        Object.assign(trace, { from: from, to: to, name: name, domain: domain, depth: depth, innerText: innerText, title: title, div: div, visible: visible, leftPx: 0, rightPx: 0, parent: parent, importance: importance });
+        div.trace = trace;
+        return trace;
+    }).sort(function (a, b) { return b.importance - a.importance; });
+    return stackedTraces;
+}
+var stackTraces = createStackTraces(timeline);
+var visibleStackTraces = new Set();
+var min = stackTraces.reduce(function (min, trace) { return Math.min(min, trace.from); }, Number.POSITIVE_INFINITY);
+var max = stackTraces.reduce(function (max, trace) { return Math.max(max, trace.to); }, Number.NEGATIVE_INFINITY);
+var left = min;
+var pixelPerMs = 0.0000001;
+var levelOfDetail = 0 /* High */;
+var debounceLODTimeout;
+function highLOD() {
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    levelOfDetail = 0 /* High */;
+    tracesDiv.style.pointerEvents = "auto";
+    updateStackTraces();
+}
+function lowLOD() {
+    levelOfDetail = 1 /* Low */;
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    debounceLODTimeout = setTimeout(highLOD, 1000);
+    tracesDiv.style.pointerEvents = "none";
+}
+function updateStackTraces() {
+    var windowWidth = window.innerWidth;
+    var right = left + (windowWidth / pixelPerMs);
+    var nextVisible = new Set();
+    var showTraces = levelOfDetail === 1 /* Low */ ? 64 : 512;
+    for (var i = 0; i < stackTraces.length && nextVisible.size < showTraces; i++) {
+        var trace = stackTraces[i];
+        trace.leftPx = (trace.from - left) * pixelPerMs;
+        trace.rightPx = (trace.to - left) * pixelPerMs;
+        if (trace.rightPx >= 0 && trace.leftPx <= windowWidth && (trace.rightPx - trace.leftPx >= 2)) {
+            nextVisible.add(trace);
+        }
+    }
+    visibleStackTraces.forEach(function (trace) {
+        if (nextVisible.has(trace)) {
+            return;
+        }
+        trace.div.style.visibility = "collapse";
+    });
+    nextVisible.forEach(function (trace) {
+        var div = trace.div, leftPx = trace.leftPx, rightPx = trace.rightPx;
+        div.style.left = Math.max(-5, leftPx) + "px";
+        div.style.right = Math.max(-5, windowWidth - rightPx) + "px";
+        if (!visibleStackTraces.has(trace)) {
+            div.style.visibility = "visible";
+        }
+    });
+    visibleStackTraces = nextVisible;
+}
+function snap(px) {
+    return Math.floor(px) + 0.5;
+}
+function redrawBackground() {
+    rulerBackgroundPatternContext.fillStyle = "#DDD";
+    rulerBackgroundPatternContext.fillRect(0, 0, rulerBackgroundPattern.width, rulerBackgroundPattern.height);
+    timelineBackgroundPatternContext.fillStyle = "#FFF";
+    timelineBackgroundPatternContext.fillRect(0, 0, timelineBackgroundPattern.width, timelineBackgroundPattern.height);
+    rulerBackgroundPatternContext.lineWidth = 1;
+    rulerBackgroundPatternContext.strokeStyle = "#BBB";
+    rulerBackgroundPatternContext.beginPath();
+    rulerBackgroundPatternContext.moveTo(snap(0), 0);
+    rulerBackgroundPatternContext.lineTo(snap(0), rulerBackgroundPattern.height);
+    rulerBackgroundPatternContext.stroke();
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(snap(0), 0);
+    timelineBackgroundPatternContext.lineTo(snap(0), timelineBackgroundPattern.height);
+    timelineBackgroundPatternContext.stroke();
+    // timeline horizontal lines
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(0, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.lineTo(timelineBackgroundPattern.width, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.stroke();
+    rulerBackgroundPatternContext.strokeStyle = "#CCC";
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    for (var i = 1; i < 10; i++) {
+        var x = rulerBackgroundPattern.width / 1000 * i * 100;
+        rulerBackgroundPatternContext.beginPath();
+        rulerBackgroundPatternContext.moveTo(snap(x), rulerBackgroundPattern.height - rulerBackgroundPattern.height * 0.25);
+        rulerBackgroundPatternContext.lineTo(snap(x), rulerBackgroundPattern.height);
+        rulerBackgroundPatternContext.stroke();
+        timelineBackgroundPatternContext.beginPath();
+        timelineBackgroundPatternContext.moveTo(snap(x), 0);
+        timelineBackgroundPatternContext.lineTo(snap(x), timelineBackgroundPattern.height);
+        timelineBackgroundPatternContext.stroke();
+    }
+    var rulerOffset = -Math.round((left - Math.floor(left / 1000) * 1000) * pixelPerMs);
+    var rulerPattern = context.createPattern(rulerBackgroundPattern, "repeat");
+    context.fillStyle = rulerPattern;
+    context.translate(rulerOffset, 0);
+    context.fillRect(-rulerOffset, 0, background.width, 30);
+    context.translate(-rulerOffset, 0);
+    var timelinePattern = context.createPattern(timelineBackgroundPattern, "repeat");
+    context.fillStyle = timelinePattern;
+    context.translate(rulerOffset, 31);
+    context.fillRect(-rulerOffset, 0, background.width, background.height - 30);
+    context.translate(-rulerOffset, -31);
+    // Separators
+    context.lineWidth = 1;
+    context.strokeStyle = "#666";
+    context.beginPath();
+    context.moveTo(0, snap(30));
+    context.lineTo(background.width, snap(30));
+    context.stroke();
+}
+function resize() {
+    background.width = window.innerWidth;
+    background.height = window.innerHeight;
+}
+function resizeRulers() {
+    // Lets try major rules on seconds and minor rules on 100ms.
+    var width = 1000 * pixelPerMs;
+    rulerBackgroundPattern.width = width;
+    rulerBackgroundPattern.height = 30;
+    timelineBackgroundPattern.width = width;
+    timelineBackgroundPattern.height = 21;
+}
+function clampViewPort() {
+    pixelPerMs = Math.max(window.innerWidth / (max - min), pixelPerMs);
+    left = Math.min(Math.max(min, left), max - window.innerWidth / pixelPerMs);
+}
+function focusTrace(ev) {
+    if (suspendClicks) {
+        return;
+    }
+    var trace = this.trace;
+    pixelPerMs = window.innerWidth / (trace.to - trace.from);
+    left = trace.from;
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+}
+window.addEventListener("resize", function () {
+    resize();
+    resizeRulers();
+    clampViewPort();
+    updateStackTraces();
+    redrawBackground();
+});
+window.addEventListener("mousewheel", function (e) {
+    var mousePoint = left + e.clientX / pixelPerMs;
+    pixelPerMs = Math.pow(2, Math.log2(pixelPerMs) + Math.max(-0.25, Math.min(0.25, e.wheelDelta)));
+    left = mousePoint - e.clientX / pixelPerMs;
+    lowLOD();
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+});
+var dragging = false;
+var suspendClicks = false;
+var mouseDown = false;
+var dragOriginXms; // The millisecond at which the chart was grabbed
+var dragOriginXpx;
+window.addEventListener("mousedown", function (e) {
+    dragOriginXms = left + e.clientX / pixelPerMs;
+    dragOriginXpx = e.clientX;
+    mouseDown = true;
+}, true);
+window.addEventListener("mouseup", function (e) {
+    if (dragging) {
+        dragging = false;
+        // Cant find a way to prevent the click action
+        suspendClicks = true;
+        setTimeout(function () { return suspendClicks = false; }, 1);
+    }
+    mouseDown = false;
+});
+window.addEventListener("mousemove", function (e) {
+    if (mouseDown && !dragging && Math.abs(e.clientX - dragOriginXpx) > 8) {
+        dragging = true;
+    }
+    if (dragging) {
+        left = dragOriginXms - e.clientX / pixelPerMs;
+        lowLOD();
+        clampViewPort();
+        redrawBackground();
+        updateStackTraces();
+    }
+});
+clampViewPort();
+resize();
+resizeRulers();
+redrawBackground();
+updateStackTraces();
+
+  </script>
+</body>
+</html>
