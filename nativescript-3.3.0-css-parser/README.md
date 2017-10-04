@@ -25,7 +25,7 @@ On the other hand here are the times that some JavaScript CSS parsing libraries 
  - [parserlib](https://github.com/CSSLint/parser-lib): 123.23ms.
  - [css-tree](https://github.com/csstree/csstree): 29.89ms.
 
-Polymer's shady is twice faster than the rework, currently used in {N}, but it is BSD3 and is not compatible with the Apache-2.0 we use to license {N}. The rest does not differ enough, compared to rework, to be considered for proper replacement.
+Polymer's shady is two times faster than the rework, currently used in {N}, but it is BSD3 and is not compatible with the Apache-2.0 we use to license {N}. The rest does not differ enough, compared to rework, to be considered for proper replacement.
 
 ## Writing a Custom Parser
 Implementing a CSS3 parser is not technically challenging given [the CSS3 a spec](https://www.w3.org/TR/css-syntax-3/), but may be time consuming. There is a branch within {N}, where some basics of the specs have been implemented in a handwritten parser, and the times yielded by that parser are:
