@@ -62,8 +62,8 @@ The time with the mapping gets slower, but the AST now can be fed into the Nativ
     - rework: 207ms.
     - handwritten {N} parser: 78ms.
  - Startup times:
-    - rework: 2368ms.
-    - handwritten {N} parser: 2511ms.
+    - rework: 2511ms.
+    - handwritten {N} parser: 2368ms.
 
 That's a 150ms. improvement.
 
