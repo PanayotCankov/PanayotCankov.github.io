@@ -31,7 +31,7 @@ Polymer's shady is two times faster than the rework, currently used in {N}, but 
 Implementing a CSS3 parser is not technically challenging given [the CSS3 a spec](https://www.w3.org/TR/css-syntax-3/), but may be time consuming. There is a branch within {N}, where some basics of the specs have been implemented in a handwritten parser, and the times yielded by that parser are:
  - nativescript handwritten parser: 7.56ms
 
-The parser is not 100% implemented, it does not escape string characters. For example it will parse properly, but will not replace the `\"` with `"`, at the middle of a `"asd\"asd"` string. So some additional time will be added if it is fully implemented. It will also build an AST that has the raw tokens when building the AST instead of concatenating them back to strings. What does that mean? Rework outputs something like:
+The parser is not 100% implemented, it does not escape string characters. For example it will parse properly, but will not replace the `\"` with `"`, at the middle of a `"asd\"asd"` string. So some additional time will be added if it is fully implemented. It will also build an AST that has the raw tokens when building the AST instead of concatenating them back to strings. Rework outputs something like:
 ``` JSON
 {
     "type": "rule",
