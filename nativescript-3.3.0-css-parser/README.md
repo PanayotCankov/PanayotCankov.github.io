@@ -31,7 +31,7 @@ Polymer's shady is two times faster than the rework, currently used in {N}, but 
 Implementing a CSS3 parser is not technically challenging given [the CSS3 a spec](https://www.w3.org/TR/css-syntax-3/), but may be time consuming. There is a branch within {N}, where some basics of the specs have been implemented in a handwritten parser, and the times yielded by that parser are:
  - nativescript handwritten parser: 7.56ms
 
-The parser is not 100% implemented, it does not escape string characters (will not resolve \" to " at "asd\"asd") so some additional time will be added if it is fully implemented. It will also build an AST that has the raw tokens when building the AST instead of concatenating them back to strings. What does that mean? Rework outputs something like:
+The parser is not 100% implemented, it does not escape string characters. For example it will parse properly, but will not replace the `\"` with `"`, at the middle of a `"asd\"asd"` string. So some additional time will be added if it is fully implemented. It will also build an AST that has the raw tokens when building the AST instead of concatenating them back to strings. What does that mean? Rework outputs something like:
 ``` JSON
 {
     "type": "rule",
@@ -51,9 +51,9 @@ While the nativescript handwritten implementation:
     ]
 }
 ```
-What does this mean? The NativeScript framework properties will currently parse the "100px" provided byt rework, to a { value: 100, unit: "px" } object. The CSS3 spec however does recognize units and emit unit input tokens, implementing a parser in {N} will let us consume these tokens in the property system saving additional parsing time.
+What does this mean? The NativeScript framework properties will currently parse the "100px" provided by rework, to a { value: 100, unit: "px" } object. The CSS3 spec however does recognize units and emit unit input tokens, implementing a parser in {N} will let us consume these tokens in the property system saving additional parsing time.
 
-Now adding a layer over the handmade parser to convert the AST to the format provided by rework requires some strings to be concatenated and additional JavaScript object tree to be constructed. Measuring it results into:
+Now adding a layer, over the handmade parser, to convert the AST to the format provided by rework requires some strings to be concatenated and additional JavaScript object tree to be constructed. Measuring it results into:
  - nativescript hand written parser, mapped to rework: 12.12ms.
 
 ## Measurements on Hardware
@@ -71,4 +71,8 @@ Here is the full report for the startup time:
 - [rework startup profiling](./reports/android-sdk-ng-nexus5-rework.html)
 - [handwritten parser startup profiling](./reports/android-sdk-ng-nexus5-n.html)
 
-Remember that key/value pairs are now back into strings. The property system will have to parse "100%" to units. Also the CSS3 parse time is directly followed by 60ms. create selectors, which once again parses the selectors from strings instead of input tokens. Integrating the input token stream as input for these parsers may further improve times. Or may not?
+Remember that key/value pairs are now back into strings. The property system will have to parse "100%" to units. Also the CSS3 parse time is directly followed by 60ms. create selectors, which once again parses the selectors from strings instead of input tokens. Integrating the input token stream as input for these parsers may further improve times.
+
+Or it may not?
+
+{% include disqus.html %}
