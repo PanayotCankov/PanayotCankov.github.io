@@ -54,7 +54,7 @@ You can make a reference cycle in Objective-C that will leak native and JavaScri
 You can let instances be prematurely collected. Using weak properties or API, that involve methods such as `setTarget:selector:...` that will add the Objective-C instance as native target, but holds weak Objective-C references, these does not increment the ref-count of the Objective-C instance. The target may remain with ref-count 1. If the JavaScript GC collects the JavaScript instances of the splice, it will then delete the Objective-C instance. The annoying part is the code will behave properly for a while - until the non deterministic completion of the GC.
 
 #### Half-Dead Splice
-We haven't had problems with cases in which the JavaScript instance be alive and the Objective-C instance be deallocated or the vice versa.
+When the JavaScript counterpart of a splice is collected, the native Objective-C instance is scheduled for deallocation, there is a very short time frame during which the native instance can be posted a message (as example - a method call on delegate that is normally held in a weakref property) and this may result in calling to an already collected JavaScript instance.
 
 #### Very Objective-C Friendly
 Overall the implementation is really Objective-C friendly and predictable. When working with native APIs it requires some additional care about memory management, but nothing more than general iOS knowledge. Is very UI friendly and does not introduce big pauses on the main UI thread.
