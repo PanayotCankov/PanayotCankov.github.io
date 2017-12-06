@@ -1,3 +1,4 @@
- - [NativeScript 3.1.0: Performance Improvements and Timeline Introduction](./nativescript-3.1.0-timeline)
- - [NativeScript 3.2.0: Memory Management](./nativescript-3.2.0-memory-management)
+ - [NativeScript 3.4.0: Angular iOS Startup](./nativescript-3.4.0-angular-ios-startup)
  - [NativeScript 3.3.0: CSS Parser](./nativescript-3.3.0-css-parser)
+ - [NativeScript 3.2.0: Memory Management](./nativescript-3.2.0-memory-management)
+ - [NativeScript 3.1.0: Performance Improvements and Timeline Introduction](./nativescript-3.1.0-timeline)
