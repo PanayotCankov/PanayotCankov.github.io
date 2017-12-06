@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profiling</title>
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.trace {
+    position: absolute;
+    border: 1px solid black;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #DDD;
+    cursor: default;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.trace.Modules {
+    background-color: #BFF;
+}
+.trace.Runtime {
+    background-color: #FFB;
+}
+.trace:hover {
+    background-color: #FFF;
+    border-color: orange;
+    z-index: 1;
+    box-shadow: 0px 1px 5px black;
+}
+</style>
+</head>
+<body>
+  <script>
+var timeline = [{"domain":"Runtime","name":"Debug: Wait for JavaScript debugger","from":521837148.759,"to":521837650.594},{"domain":"Runtime","name":"main","from":521837086.181,"to":521837651.571},{"domain":"Runtime","name":"Expose: UIViewController","from":521837842.434,"to":521837882.362},{"domain":"Runtime","name":"Expose: UIWindow","from":521837842.412,"to":521837882.561},{"domain":"Runtime","name":"Expose: UIView","from":521837836.266,"to":521837883.622},{"domain":"Runtime","name":"Expose: UIResponder","from":521837836.177,"to":521837889.504},{"domain":"Runtime","name":"Expose: UIScreen","from":521837829.802,"to":521837889.795},{"domain":"Modules","name":"e.parseCSSAst app.css","from":521837925.052916,"to":521838035.794333},{"domain":"Modules","name":"e.createSelectors app.css","from":521838036.092375,"to":521838050.214333},{"domain":"Modules","name":"e.parse app.css","from":521837925.000541,"to":521838050.377333},{"domain":"Modules","name":"\"style-scope\".loadCss [object NativeScriptGlobal]","from":521837924.121833,"to":521838050.517583},{"domain":"Modules","name":"\"style-scope\".loadAppCSS [object Object]","from":521837924.096083,"to":521838050.847166},{"domain":"Runtime","name":"require: /app/vendor.js","from":521837672.351,"to":521838161.067},{"domain":"Modules","name":"r.createNavigationEntry [object Object]","from":521838169.014333,"to":521838169.081166},{"domain":"Modules","name":"t._setupUI t(1)","from":521838254.512833,"to":521838255.023208},{"domain":"Modules","name":"e.updateMatch t(1)._cssState","from":521838257.567125,"to":521838257.603166},{"domain":"Modules","name":"e.updateDynamicState t(1)._cssState","from":521838258.0925,"to":521838258.737666},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838258.904708,"to":521838259.077416},{"domain":"Modules","name":"t.onLoaded t(1)","from":521838257.494375,"to":521838259.279},{"domain":"Modules","name":"entry.create [object NativeScriptGlobal]","from":521838259.566333,"to":521838261.929291},{"domain":"Modules","name":"resolvePageFromEntry [object Object]","from":521838259.485958,"to":521838262.125333},{"domain":"Modules","name":"t._addView Page(2)","from":521838263.236708,"to":521838264.065625},{"domain":"Modules","name":"UINavigationControllerImpl.pushViewControllerAnimated <UINavigationControllerImpl: 0x12882ae00>","from":521838265.290708,"to":521838266.139},{"domain":"Modules","name":"t._navigateCore t(1)","from":521838262.346291,"to":521838266.528541},{"domain":"Modules","name":"r.performNavigation t(1)","from":521838262.271541,"to":521838266.608083},{"domain":"Modules","name":"t.onLoaded t(1)","from":521838257.455083,"to":521838266.6805},{"domain":"Modules","name":"UINavigationControllerImpl.viewWillAppear <UINavigationControllerImpl: 0x12882ae00>","from":521838257.300583,"to":521838266.736666},{"domain":"Modules","name":"e.didFinishLaunchingWithOptions [object Object]","from":521838240.751666,"to":521838267.855458},{"domain":"Modules","name":"e.didBecomeActive [object Object]","from":521838269.054833,"to":521838269.20125},{"domain":"Modules","name":"View.layout t(1)","from":521838271.398916,"to":521838272.777875},{"domain":"Modules","name":"Window.layoutSubviews <Window: 0x127e0aeb0; baseClass = UIWindow; frame = (0 0; 375 667); gestureRecognizers = <NSArray: 0x17405a280>; layer = <UIWindowLayer: 0x17003a620>>","from":521838270.168,"to":521838272.934208},{"domain":"Modules","name":"t.selectRootElement [object Object]","from":521838287.505291,"to":521838287.527416},{"domain":"Modules","name":"t.createText [object Object]","from":521838288.9765,"to":521838289.387375},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838289.735041,"to":521838290.23625},{"domain":"Modules","name":"t.createElement [object Object]","from":521838290.404666,"to":521838291.299333},{"domain":"Modules","name":"t._addView Page(2)","from":521838291.77375,"to":521838292.037458},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838291.462,"to":521838292.401541},{"domain":"Modules","name":"t.createText [object Object]","from":521838293.403958,"to":521838293.497625},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838293.639458,"to":521838293.686083},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838294.017,"to":521838294.721916},{"domain":"Modules","name":"t.createElement [object Object]","from":521838312.537458,"to":521838312.683416},{"domain":"Modules","name":"t.createText [object Object]","from":521838314.40225,"to":521838314.464208},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838314.685666,"to":521838314.737791},{"domain":"Modules","name":"t.createText [object Object]","from":521838314.872625,"to":521838314.892875},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838315.08875,"to":521838315.11875},{"domain":"Modules","name":"t.createElement [object Object]","from":521838315.24425,"to":521838315.3445},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838315.4835,"to":521838315.573875},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838315.845416,"to":521838316.718041},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838316.912458,"to":521838317.317375},{"domain":"Modules","name":"t._addView Page(2)","from":521838318.246458,"to":521838318.298375},{"domain":"Modules","name":"t.createText [object Object]","from":521838318.667458,"to":521838318.749833},{"domain":"Modules","name":"t.createText [object Object]","from":521838318.909666,"to":521838318.92925},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838319.066958,"to":521838319.163708},{"domain":"Modules","name":"t.createText [object Object]","from":521838319.364583,"to":521838319.393583},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838319.588125,"to":521838319.615666},{"domain":"Modules","name":"t.createElement [object Object]","from":521838319.757625,"to":521838321.085125},{"domain":"Modules","name":"t._addView t(7)","from":521838321.459375,"to":521838321.540625},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838321.295708,"to":521838321.7545},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838321.893375,"to":521838322.033333},{"domain":"Modules","name":"t.createText [object Object]","from":521838322.23625,"to":521838322.291},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838322.440583,"to":521838322.50225},{"domain":"Modules","name":"t.createElement [object Object]","from":521838322.654041,"to":521838335.475291},{"domain":"Modules","name":"t._addView StackLayout(14)","from":521838335.956041,"to":521838336.070916},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838335.780208,"to":521838336.247083},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838336.416541,"to":521838336.613416},{"domain":"Modules","name":"t.createText [object Object]","from":521838337.499083,"to":521838337.566},{"domain":"Modules","name":"t.createComment [object Object]","from":521838354.440083,"to":521838354.849875},{"domain":"Modules","name":"t.createText [object Object]","from":521838355.238125,"to":521838355.3315},{"domain":"Modules","name":"t.createText [object Object]","from":521838355.513083,"to":521838355.533958},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838355.792041,"to":521838355.887333},{"domain":"Modules","name":"t.createText [object Object]","from":521838356.038916,"to":521838356.094541},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838356.247,"to":521838356.310041},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838357.140291,"to":521838357.22525},{"domain":"Modules","name":"t.createText [object Object]","from":521838357.4195,"to":521838357.45625},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838357.620833,"to":521838357.668083},{"domain":"Modules","name":"t.createElement [object Object]","from":521838357.796791,"to":521838358.125208},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838358.304958,"to":521838358.347833},{"domain":"Modules","name":"t.createText [object Object]","from":521838358.577791,"to":521838358.634708},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838358.798083,"to":521838358.8295},{"domain":"Modules","name":"t.createElement [object Object]","from":521838358.965125,"to":521838359.534166},{"domain":"Modules","name":"t._addView t(24)","from":521838359.793291,"to":521838359.826333},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838359.721666,"to":521838359.971958},{"domain":"Modules","name":"t.createText [object Object]","from":521838360.143125,"to":521838360.188666},{"domain":"Modules","name":"t.appendChild [object Object]","from":521838360.349916,"to":521838360.399458},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838361.922583,"to":521838361.966041},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838362.173833,"to":521838362.224833},{"domain":"Modules","name":"t._addView Page(2)","from":521838363.020625,"to":521838363.234375},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838362.819083,"to":521838363.459875},{"domain":"Modules","name":"e.activateWith [object Object]","from":521838311.827708,"to":521838363.694708},{"domain":"Modules","name":"nativescript-angular/platform-common.postBootstrapAction [object NativeScriptGlobal]","from":521838365.090666,"to":521838365.480125},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838368.433208,"to":521838368.635083},{"domain":"Modules","name":"nativescript-angular/platform-common.initHandler [object Object]","from":521838274.630416,"to":521838369.548583},{"domain":"Modules","name":"t.onNavigatingTo Page(2)","from":521838274.523333,"to":521838369.643333},{"domain":"Modules","name":"t._setupUI ListView(16)","from":521838370.834666,"to":521838370.979958},{"domain":"Modules","name":"t._setupUI StackLayout(14)","from":521838370.233208,"to":521838371.127375},{"domain":"Modules","name":"t._setupUI t(7)","from":521838369.954875,"to":521838371.205958},{"domain":"Modules","name":"t._setupUI ActionBar(10)","from":521838371.272041,"to":521838371.410583},{"domain":"Modules","name":"t._setupUI Page(2)","from":521838369.775333,"to":521838371.683875},{"domain":"Modules","name":"e._createSelectors [object Object]","from":521838371.947666,"to":521838374.71675},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838371.892375,"to":521838375.3715},{"domain":"Modules","name":"e.updateMatch Page(2)._cssState","from":521838371.885166,"to":521838375.550166},{"domain":"Modules","name":"e.updateDynamicState Page(2)._cssState","from":521838375.809875,"to":521838375.891083},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838375.999375,"to":521838382.245041},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838382.442291,"to":521838382.54225},{"domain":"Modules","name":"e.updateMatch t(7)._cssState","from":521838382.437833,"to":521838382.750833},{"domain":"Modules","name":"e.updateDynamicState t(7)._cssState","from":521838382.835625,"to":521838382.869208},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838382.975416,"to":521838383.196833},{"domain":"Modules","name":"e.updateMatch StackLayout(14)._cssState","from":521838382.97425,"to":521838383.334916},{"domain":"Modules","name":"e.updateDynamicState StackLayout(14)._cssState","from":521838383.474083,"to":521838384.657958},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838384.785708,"to":521838384.903541},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838385.160958,"to":521838385.223833},{"domain":"Modules","name":"e.updateMatch ListView(16)._cssState","from":521838385.1315,"to":521838385.318625},{"domain":"Modules","name":"e.updateDynamicState ListView(16)._cssState","from":521838385.421833,"to":521838385.451791},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838385.532375,"to":521838385.545625},{"domain":"Modules","name":"t.onLoaded ListView(16)","from":521838385.126083,"to":521838385.662833},{"domain":"Modules","name":"ListView.onLoaded ListView(16)","from":521838385.017291,"to":521838387.093416},{"domain":"Modules","name":"t.onLoaded StackLayout(14)","from":521838382.967,"to":521838387.270791},{"domain":"Modules","name":"t.onLoaded t(7)","from":521838382.426916,"to":521838387.45775},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838387.558458,"to":521838387.625625},{"domain":"Modules","name":"e.updateMatch ActionBar(10)._cssState","from":521838387.5565,"to":521838387.722083},{"domain":"Modules","name":"e.updateDynamicState ActionBar(10)._cssState","from":521838387.806541,"to":521838388.400333},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838388.735083,"to":521838390.112083},{"domain":"Modules","name":"t.onLoaded ActionBar(10)","from":521838387.545958,"to":521838390.416},{"domain":"Modules","name":"t.onLoaded Page(2)","from":521838371.867625,"to":521838390.596625},{"domain":"Modules","name":"Page.onLoaded Page(2)","from":521838371.813,"to":521838390.721916},{"domain":"Modules","name":"t._addView t(1)","from":521838369.74,"to":521838390.815833},{"domain":"Modules","name":"View.onMeasure ListView(16)","from":521838393.353833,"to":521838393.5005},{"domain":"Modules","name":"View.layout ActionBar(10)","from":521838394.542666,"to":521838394.757916},{"domain":"Modules","name":"View.layout ListView(16)","from":521838395.313666,"to":521838399.623916},{"domain":"Modules","name":"View.layout StackLayout(14)","from":521838394.950166,"to":521838401.09375},{"domain":"Modules","name":"View.layout Page(2)","from":521838394.131333,"to":521838401.261708},{"domain":"Modules","name":"View.layout t(1)","from":521838393.910375,"to":521838401.34275},{"domain":"Modules","name":"Window.layoutSubviews <Window: 0x127e0aeb0; baseClass = UIWindow; frame = (0 0; 375 667); gestureRecognizers = <NSArray: 0x17405a280>; layer = <UIWindowLayer: 0x17003a620>>","from":521838391.016583,"to":521838401.405791},{"domain":"Modules","name":"UINavigationControllerImpl.viewDidLayoutSubviews <UINavigationControllerImpl: 0x12882ae00>","from":521838402.359791,"to":521838402.662833},{"domain":"Modules","name":"UIViewControllerImpl.viewWillAppear <UIViewControllerImpl: 0x127d12e50>","from":521838274.003666,"to":521838407.734541},{"domain":"Modules","name":"UINavigationControllerImpl.viewDidLayoutSubviews <UINavigationControllerImpl: 0x12882ae00>","from":521838412.328958,"to":521838412.42275},{"domain":"Modules","name":"UIViewControllerImpl.viewDidLayoutSubviews <UIViewControllerImpl: 0x127d12e50>","from":521838413.545666,"to":521838413.946166},{"domain":"Modules","name":"t.createText [object Object]","from":521838416.216166,"to":521838416.283875},{"domain":"Modules","name":"t.createElement [object Object]","from":521838416.456083,"to":521838416.938625},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838417.118541,"to":521838417.36775},{"domain":"Modules","name":"t.listen [object Object]","from":521838417.750541,"to":521838418.19225},{"domain":"Modules","name":"t.createText [object Object]","from":521838418.54075,"to":521838418.634625},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838419.009291,"to":521838419.075083},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838419.15375,"to":521838419.169333},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838419.278333,"to":521838419.330083},{"domain":"Modules","name":"t._addView t(24)","from":521838419.498208,"to":521838419.536458},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838419.434208,"to":521838419.616458},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838419.746916,"to":521838419.777416},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838422.567708,"to":521838422.775208},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838423.363916,"to":521838423.4625},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838420.504416,"to":521838423.609541},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838415.888375,"to":521838423.692166},{"domain":"Modules","name":"t._setupUI Label(29)","from":521838424.764666,"to":521838424.79675},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838424.924125,"to":521838426.091},{"domain":"Modules","name":"e.updateMatch Label(29)._cssState","from":521838424.92175,"to":521838426.200708},{"domain":"Modules","name":"e.updateDynamicState Label(29)._cssState","from":521838426.298,"to":521838427.903416},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838428.034083,"to":521838435.907208},{"domain":"Modules","name":"t.onLoaded Label(29)","from":521838424.916083,"to":521838437.469166},{"domain":"Modules","name":"t._addView ListView(16)","from":521838424.708541,"to":521838437.86725},{"domain":"Modules","name":"View.layout Label(29)","from":521838439.038041,"to":521838439.169208},{"domain":"Modules","name":"t.createText [object Object]","from":521838443.999041,"to":521838444.065291},{"domain":"Modules","name":"t.createElement [object Object]","from":521838444.582916,"to":521838444.829125},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838445.203916,"to":521838445.336333},{"domain":"Modules","name":"t.listen [object Object]","from":521838445.452791,"to":521838445.539208},{"domain":"Modules","name":"t.createText [object Object]","from":521838445.694416,"to":521838445.748375},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838445.894,"to":521838445.90625},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838445.969875,"to":521838445.982166},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838446.083125,"to":521838446.119541},{"domain":"Modules","name":"t._addView t(24)","from":521838446.254125,"to":521838446.291541},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838446.192125,"to":521838446.366791},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838446.430875,"to":521838446.456666},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838446.901541,"to":521838447.037125},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838447.212833,"to":521838447.242166},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838446.588375,"to":521838447.312541},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838443.9445,"to":521838447.363583},{"domain":"Modules","name":"t._setupUI Label(32)","from":521838447.984541,"to":521838448.007208},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838448.099458,"to":521838448.293375},{"domain":"Modules","name":"e.updateMatch Label(32)._cssState","from":521838448.097791,"to":521838448.427583},{"domain":"Modules","name":"e.updateDynamicState Label(32)._cssState","from":521838448.500083,"to":521838448.93175},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838449.008958,"to":521838449.472541},{"domain":"Modules","name":"t.onLoaded Label(32)","from":521838448.094125,"to":521838449.816708},{"domain":"Modules","name":"t._addView ListView(16)","from":521838447.949458,"to":521838450.00325},{"domain":"Modules","name":"View.layout Label(32)","from":521838450.35275,"to":521838450.550875},{"domain":"Modules","name":"t.createText [object Object]","from":521838451.782666,"to":521838451.8385},{"domain":"Modules","name":"t.createElement [object Object]","from":521838452.015583,"to":521838452.153291},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838452.251875,"to":521838452.342958},{"domain":"Modules","name":"t.listen [object Object]","from":521838452.444833,"to":521838452.496291},{"domain":"Modules","name":"t.createText [object Object]","from":521838452.675,"to":521838452.715541},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838452.842208,"to":521838452.852625},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838452.912708,"to":521838452.922875},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838452.986583,"to":521838453.020416},{"domain":"Modules","name":"t._addView t(24)","from":521838453.265791,"to":521838453.315458},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838453.165333,"to":521838453.486416},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838453.73775,"to":521838453.847041},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838454.094541,"to":521838454.117083},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838454.210333,"to":521838454.232208},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838453.953916,"to":521838454.326833},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838451.743625,"to":521838454.405041},{"domain":"Modules","name":"t._setupUI Label(35)","from":521838454.800666,"to":521838454.819791},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838454.916916,"to":521838455.070583},{"domain":"Modules","name":"e.updateMatch Label(35)._cssState","from":521838454.915416,"to":521838455.134708},{"domain":"Modules","name":"e.updateDynamicState Label(35)._cssState","from":521838455.330583,"to":521838455.891375},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838456.0595,"to":521838456.416291},{"domain":"Modules","name":"t.onLoaded Label(35)","from":521838454.912083,"to":521838456.629625},{"domain":"Modules","name":"t._addView ListView(16)","from":521838454.766583,"to":521838456.728458},{"domain":"Modules","name":"View.layout Label(35)","from":521838457.081125,"to":521838457.182083},{"domain":"Modules","name":"t.createText [object Object]","from":521838458.277625,"to":521838458.3335},{"domain":"Modules","name":"t.createElement [object Object]","from":521838458.508458,"to":521838458.666708},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838458.758041,"to":521838458.855958},{"domain":"Modules","name":"t.listen [object Object]","from":521838458.961916,"to":521838459.011333},{"domain":"Modules","name":"t.createText [object Object]","from":521838459.167666,"to":521838459.202833},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838459.305583,"to":521838459.315208},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838459.375416,"to":521838459.385291},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838459.448416,"to":521838459.481208},{"domain":"Modules","name":"t._addView t(24)","from":521838459.695541,"to":521838459.724166},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838459.62325,"to":521838459.866166},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838460.081375,"to":521838460.107458},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838460.362125,"to":521838460.383},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838460.536833,"to":521838460.559541},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838460.226791,"to":521838460.628791},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838458.218,"to":521838460.679083},{"domain":"Modules","name":"t._setupUI Label(38)","from":521838461.058958,"to":521838461.104083},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838461.257291,"to":521838461.5005},{"domain":"Modules","name":"e.updateMatch Label(38)._cssState","from":521838461.255625,"to":521838461.56475},{"domain":"Modules","name":"e.updateDynamicState Label(38)._cssState","from":521838461.629625,"to":521838462.082166},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838462.306625,"to":521838462.616375},{"domain":"Modules","name":"t.onLoaded Label(38)","from":521838461.2215,"to":521838462.778916},{"domain":"Modules","name":"t._addView ListView(16)","from":521838461.019416,"to":521838462.87675},{"domain":"Modules","name":"View.layout Label(38)","from":521838463.128583,"to":521838463.318375},{"domain":"Modules","name":"t.createText [object Object]","from":521838464.177541,"to":521838464.233541},{"domain":"Modules","name":"t.createElement [object Object]","from":521838464.373041,"to":521838464.5175},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838464.606583,"to":521838464.696291},{"domain":"Modules","name":"t.listen [object Object]","from":521838464.7915,"to":521838464.837833},{"domain":"Modules","name":"t.createText [object Object]","from":521838465.102791,"to":521838465.171708},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838465.260041,"to":521838465.270291},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838465.327625,"to":521838465.3375},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838465.403916,"to":521838465.437166},{"domain":"Modules","name":"t._addView t(24)","from":521838465.570458,"to":521838465.59775},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838465.524541,"to":521838465.669666},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838465.730666,"to":521838465.754833},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838466.0235,"to":521838466.105},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838466.334916,"to":521838466.358625},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838465.854625,"to":521838466.428166},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838464.121375,"to":521838466.480333},{"domain":"Modules","name":"t._setupUI Label(41)","from":521838466.849166,"to":521838466.867666},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838466.99,"to":521838467.280541},{"domain":"Modules","name":"e.updateMatch Label(41)._cssState","from":521838466.954166,"to":521838467.34625},{"domain":"Modules","name":"e.updateDynamicState Label(41)._cssState","from":521838467.4425,"to":521838467.715625},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838467.793416,"to":521838468.116958},{"domain":"Modules","name":"t.onLoaded Label(41)","from":521838466.951208,"to":521838468.373083},{"domain":"Modules","name":"t._addView ListView(16)","from":521838466.792666,"to":521838468.458583},{"domain":"Modules","name":"View.layout Label(41)","from":521838468.692208,"to":521838468.831291},{"domain":"Modules","name":"t.createText [object Object]","from":521838469.740083,"to":521838469.817291},{"domain":"Modules","name":"t.createElement [object Object]","from":521838469.939166,"to":521838470.11825},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838470.27425,"to":521838470.371833},{"domain":"Modules","name":"t.listen [object Object]","from":521838470.443583,"to":521838470.488208},{"domain":"Modules","name":"t.createText [object Object]","from":521838470.633958,"to":521838470.671375},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838470.771875,"to":521838470.78175},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838470.846208,"to":521838470.855583},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838470.922333,"to":521838470.9535},{"domain":"Modules","name":"t._addView t(24)","from":521838471.096791,"to":521838471.125125},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838471.045083,"to":521838471.453208},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838471.570916,"to":521838471.663791},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838472.047375,"to":521838472.140166},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838472.248541,"to":521838472.269541},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838471.872541,"to":521838472.337791},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838469.706583,"to":521838472.389125},{"domain":"Modules","name":"t._setupUI Label(44)","from":521838472.768666,"to":521838472.787541},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838472.906791,"to":521838473.063458},{"domain":"Modules","name":"e.updateMatch Label(44)._cssState","from":521838472.887875,"to":521838473.126958},{"domain":"Modules","name":"e.updateDynamicState Label(44)._cssState","from":521838473.193458,"to":521838473.462125},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838473.54125,"to":521838474.145166},{"domain":"Modules","name":"t.onLoaded Label(44)","from":521838472.885166,"to":521838474.326958},{"domain":"Modules","name":"t._addView ListView(16)","from":521838472.734125,"to":521838474.40475},{"domain":"Modules","name":"View.layout Label(44)","from":521838474.609833,"to":521838474.747416},{"domain":"Modules","name":"t.createText [object Object]","from":521838475.59875,"to":521838475.655958},{"domain":"Modules","name":"t.createElement [object Object]","from":521838475.790125,"to":521838475.944583},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838476.038125,"to":521838476.136458},{"domain":"Modules","name":"t.listen [object Object]","from":521838476.234333,"to":521838476.2815},{"domain":"Modules","name":"t.createText [object Object]","from":521838476.428541,"to":521838476.466083},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838476.569291,"to":521838476.579541},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838476.639,"to":521838476.6495},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838476.715458,"to":521838476.746958},{"domain":"Modules","name":"t._addView t(24)","from":521838477.304,"to":521838477.36525},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838477.196291,"to":521838477.674166},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838477.809083,"to":521838477.8525},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838478.170833,"to":521838478.193583},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838478.306416,"to":521838478.327958},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838478.013666,"to":521838478.424916},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838475.509916,"to":521838478.478875},{"domain":"Modules","name":"t._setupUI Label(47)","from":521838478.85675,"to":521838478.881833},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838479.034208,"to":521838479.285333},{"domain":"Modules","name":"e.updateMatch Label(47)._cssState","from":521838479.012791,"to":521838479.34675},{"domain":"Modules","name":"e.updateDynamicState Label(47)._cssState","from":521838479.416375,"to":521838479.649083},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838479.747791,"to":521838480.052041},{"domain":"Modules","name":"t.onLoaded Label(47)","from":521838478.963708,"to":521838480.217},{"domain":"Modules","name":"t._addView ListView(16)","from":521838478.82025,"to":521838480.287916},{"domain":"Modules","name":"View.layout Label(47)","from":521838480.532166,"to":521838480.639583},{"domain":"Modules","name":"t.createText [object Object]","from":521838482.163916,"to":521838482.232458},{"domain":"Modules","name":"t.createElement [object Object]","from":521838482.376916,"to":521838482.524208},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838482.621625,"to":521838482.708791},{"domain":"Modules","name":"t.listen [object Object]","from":521838482.776666,"to":521838482.82825},{"domain":"Modules","name":"t.createText [object Object]","from":521838482.991875,"to":521838483.028083},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838483.193833,"to":521838483.205083},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838483.345958,"to":521838483.367833},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838483.462,"to":521838483.549},{"domain":"Modules","name":"t._addView t(24)","from":521838483.739875,"to":521838483.767916},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838483.689916,"to":521838483.876416},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838483.947375,"to":521838483.9735},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838484.209583,"to":521838484.230291},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838484.314708,"to":521838484.336791},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838484.079166,"to":521838484.43475},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838482.118416,"to":521838484.494875},{"domain":"Modules","name":"t._setupUI Label(50)","from":521838485.015958,"to":521838485.082958},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838485.290333,"to":521838485.454416},{"domain":"Modules","name":"e.updateMatch Label(50)._cssState","from":521838485.288625,"to":521838485.519916},{"domain":"Modules","name":"e.updateDynamicState Label(50)._cssState","from":521838485.635625,"to":521838485.897958},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838485.996541,"to":521838486.342041},{"domain":"Modules","name":"t.onLoaded Label(50)","from":521838485.275083,"to":521838486.517416},{"domain":"Modules","name":"t._addView ListView(16)","from":521838484.978541,"to":521838486.5985},{"domain":"Modules","name":"View.layout Label(50)","from":521838486.819125,"to":521838486.952333},{"domain":"Modules","name":"t.createText [object Object]","from":521838487.924958,"to":521838487.980583},{"domain":"Modules","name":"t.createElement [object Object]","from":521838488.122875,"to":521838488.280958},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838488.3655,"to":521838488.45175},{"domain":"Modules","name":"t.listen [object Object]","from":521838488.519833,"to":521838488.565875},{"domain":"Modules","name":"t.createText [object Object]","from":521838488.730708,"to":521838488.767},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838488.859041,"to":521838488.868},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838488.940375,"to":521838488.9505},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838489.03175,"to":521838489.064125},{"domain":"Modules","name":"t._addView t(24)","from":521838489.323833,"to":521838489.369},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838489.204291,"to":521838489.538166},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838489.764791,"to":521838489.792},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838490.1275,"to":521838490.150833},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838490.243208,"to":521838490.264875},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838489.986875,"to":521838490.328916},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838487.886916,"to":521838490.384},{"domain":"Modules","name":"t._setupUI Label(53)","from":521838490.757708,"to":521838490.776416},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838491.003708,"to":521838491.182},{"domain":"Modules","name":"e.updateMatch Label(53)._cssState","from":521838491.001916,"to":521838491.255125},{"domain":"Modules","name":"e.updateDynamicState Label(53)._cssState","from":521838491.320041,"to":521838491.5685},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838491.665041,"to":521838491.974208},{"domain":"Modules","name":"t.onLoaded Label(53)","from":521838490.998958,"to":521838492.237875},{"domain":"Modules","name":"t._addView ListView(16)","from":521838490.718541,"to":521838492.309833},{"domain":"Modules","name":"View.layout Label(53)","from":521838492.521708,"to":521838492.721416},{"domain":"Modules","name":"t.createText [object Object]","from":521838493.560041,"to":521838493.635583},{"domain":"Modules","name":"t.createElement [object Object]","from":521838493.761291,"to":521838493.903291},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838494.011583,"to":521838494.122666},{"domain":"Modules","name":"t.listen [object Object]","from":521838494.266458,"to":521838494.334958},{"domain":"Modules","name":"t._addView t(24)","from":521838494.876166,"to":521838494.901833},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838493.526291,"to":521838495.809416},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838497.314458,"to":521838497.650666},{"domain":"Modules","name":"t.createElement [object Object]","from":521838499.336541,"to":521838499.46225},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838500.205125,"to":521838500.2155},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838500.752083,"to":521838500.783125},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838501.324625,"to":521838501.34775},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838501.466791,"to":521838501.489291},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838500.953208,"to":521838501.555291},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838499.085333,"to":521838501.610041},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838502.798875,"to":521838503.250666},{"domain":"Modules","name":"t.createElement [object Object]","from":521838505.076125,"to":521838505.204541},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838506.0465,"to":521838506.077},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838506.843125,"to":521838506.878833},{"domain":"Modules","name":"e.updateMatch Label(62)._cssState","from":521838507.957041,"to":521838508.212041},{"domain":"Modules","name":"View.layout Label(62)","from":521838509.560541,"to":521838509.70925},{"domain":"Modules","name":"t.createText [object Object]","from":521838511.460166,"to":521838511.497916},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838511.730958,"to":521838511.762791},{"domain":"Modules","name":"t._addView t(24)","from":521838515.089625,"to":521838515.148208},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838515.02225,"to":521838515.250916},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838515.346833,"to":521838515.375791},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838515.680875,"to":521838515.727666},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838515.873541,"to":521838515.896166},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838515.504083,"to":521838515.989541},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838510.522875,"to":521838516.0805},{"domain":"Modules","name":"t._setupUI Label(65)","from":521838518.186458,"to":521838518.267333},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838518.466083,"to":521838518.646791},{"domain":"Modules","name":"e.updateMatch Label(65)._cssState","from":521838518.464458,"to":521838518.726708},{"domain":"Modules","name":"e.updateDynamicState Label(65)._cssState","from":521838518.815458,"to":521838519.181458},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838519.280666,"to":521838519.672125},{"domain":"Modules","name":"t.onLoaded Label(65)","from":521838518.461583,"to":521838519.875875},{"domain":"Modules","name":"t._addView ListView(16)","from":521838518.084375,"to":521838519.960875},{"domain":"Modules","name":"View.layout Label(65)","from":521838520.306458,"to":521838520.430083},{"domain":"Modules","name":"t.createText [object Object]","from":521838523.403375,"to":521838523.482666},{"domain":"Modules","name":"t.createElement [object Object]","from":521838523.642791,"to":521838523.816833},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838523.897375,"to":521838524.029166},{"domain":"Modules","name":"t.listen [object Object]","from":521838524.1045,"to":521838524.1745},{"domain":"Modules","name":"t.createText [object Object]","from":521838524.335541,"to":521838524.378666},{"domain":"Modules","name":"t.parentNode [object Object]","from":521838524.478666,"to":521838524.488625},{"domain":"Modules","name":"t.nextSibling [object Object]","from":521838524.570125,"to":521838524.5805},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838526.163625,"to":521838526.2115},{"domain":"Modules","name":"t._addView t(24)","from":521838526.501625,"to":521838526.542791},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838526.410083,"to":521838526.625625},{"domain":"Modules","name":"t.insertBefore [object Object]","from":521838526.718333,"to":521838526.744666},{"domain":"Modules","name":"t.setAttribute [object Object]","from":521838527.084541,"to":521838527.108375},{"domain":"Modules","name":"t.setProperty [object Object]","from":521838527.21525,"to":521838527.238333},{"domain":"Modules","name":"e.detectChangesOnChild [object Object]","from":521838526.9145,"to":521838527.302875},{"domain":"Modules","name":"e.onItemLoading [object Object]","from":521838523.3695,"to":521838527.353208},{"domain":"Modules","name":"t._setupUI Label(68)","from":521838528.122958,"to":521838528.19375},{"domain":"Modules","name":"e.matchSelectors [object Object]","from":521838528.387458,"to":521838528.604875},{"domain":"Modules","name":"e.updateMatch Label(68)._cssState","from":521838528.386083,"to":521838528.667416},{"domain":"Modules","name":"e.updateDynamicState Label(68)._cssState","from":521838528.734875,"to":521838529.007916},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":521838529.079916,"to":521838529.364458},{"domain":"Modules","name":"t.onLoaded Label(68)","from":521838528.38275,"to":521838529.595958},{"domain":"Modules","name":"t._addView ListView(16)","from":521838528.087125,"to":521838529.719041},{"domain":"Modules","name":"View.layout Label(68)","from":521838529.978541,"to":521838530.261083},{"domain":"Modules","name":"UIViewControllerImpl.viewDidLayoutSubviews <UIViewControllerImpl: 0x127d12e50>","from":521838531.471958,"to":521838531.529},{"domain":"Modules","name":"UIViewControllerImpl.viewDidLayoutSubviews <UIViewControllerImpl: 0x127d12e50>","from":521838539.789625,"to":521838539.905958},{"domain":"Modules","name":"UIViewControllerImpl.viewDidLayoutSubviews <UIViewControllerImpl: 0x127d12e50>","from":521838540.331125,"to":521838540.379208},{"domain":"Modules","name":"View.layout Page(2)","from":521838542.56425,"to":521838542.594375},{"domain":"Modules","name":"View.layout t(1)","from":521838542.081166,"to":521838542.748083},{"domain":"Modules","name":"Window.layoutSubviews <Window: 0x127e0aeb0; baseClass = UIWindow; frame = (0 0; 375 667); gestureRecognizers = <NSArray: 0x17405a280>; layer = <UIWindowLayer: 0x17003a620>>","from":521838541.078291,"to":521838542.866375},{"domain":"Modules","name":"t.onNavigatedTo Page(2)","from":521838543.2535,"to":521838543.347875},{"domain":"Modules","name":"UIViewControllerImpl.viewDidAppear <UIViewControllerImpl: 0x127d12e50>","from":521838540.628125,"to":521838544.171958},{"domain":"Modules","name":"UIViewControllerImpl.viewDidLayoutSubviews <UIViewControllerImpl: 0x127d12e50>","from":521838935.7915,"to":521838935.924583},{"domain":"Modules","name":"UINavigationControllerImpl.viewDidLayoutSubviews <UINavigationControllerImpl: 0x12882ae00>","from":521838936.546833,"to":521838936.580083},{"from":521837086.181,"to":521838936.580083,"name":"ALL"}];
+var background = document.createElement('canvas');
+var context2d = background.getContext("2d");
+var rulerBackgroundPattern = document.createElement('canvas');
+var rulerBackgroundPatternContext = rulerBackgroundPattern.getContext("2d");
+var timelineBackgroundPattern = document.createElement('canvas');
+var timelineBackgroundPatternContext = timelineBackgroundPattern.getContext("2d");
+var chart = document.createElement('div');
+chart.id = "chart";
+chart.appendChild(background);
+var tracesDiv = document.createElement('div');
+tracesDiv.id = "traces";
+chart.appendChild(tracesDiv);
+document.body.appendChild(chart);
+function createStackTraces(traces) {
+    traces = traces.slice(0).sort(function (a, b) {
+        if (a.from < b.from) {
+            return -1;
+        }
+        else if (a.from === b.from) {
+            if (a.to > b.to) {
+                return -1;
+            }
+            else if (a.to === b.to) {
+                return 0;
+            }
+            else {
+                return 1;
+            }
+        }
+        else {
+            return 1;
+        }
+    });
+    var traceAtDepth = [];
+    var stackedTraces = traces.map(function (original) {
+        var from = original.from, to = original.to, name = original.name, domain = original.domain;
+        var trace = { from: from, to: to };
+        var depth;
+        for (var i = 0; i <= traceAtDepth.length; i++) {
+            if (traceAtDepth[i] === undefined || traceAtDepth[i].to <= from) {
+                depth = i;
+                traceAtDepth[i] = trace;
+                break;
+            }
+        }
+        var parent;
+        for (var i = depth - 1; i >= 0; i--) {
+            var potentialParent = traceAtDepth[i];
+            if (potentialParent.from <= trace.from && potentialParent.to >= trace.to) {
+                trace.parent = parent = potentialParent;
+                break;
+            }
+        }
+        var importance;
+        if (parent) {
+            // If it is very big, or very small - it does not matter, if it is about half its parent then it is important.
+            var ratio = (trace.to - trace.from) / (parent.to - parent.from);
+            importance = depth <= 1 ? 1 : 0.5 - Math.cos(2 * Math.PI * ratio) * 0.5;
+        }
+        else {
+            importance = 1;
+        }
+        var innerText = name + " " + Math.round(to - from) + "ms";
+        var title = name + " " + (to - from) + "ms " + importance;
+        var visible = false;
+        var div = document.createElement('div');
+        div.className = "trace " + domain;
+        tracesDiv.appendChild(div);
+        div.title = title;
+        div.innerText = innerText;
+        div.style.visibility = "hidden";
+        div.style.top = 30 + depth * 21 + "px";
+        div.addEventListener("click", focusTrace);
+        Object.assign(trace, { from: from, to: to, name: name, domain: domain, depth: depth, innerText: innerText, title: title, div: div, visible: visible, leftPx: 0, rightPx: 0, parent: parent, importance: importance });
+        div.trace = trace;
+        return trace;
+    }).sort(function (a, b) { return b.importance - a.importance; });
+    return stackedTraces;
+}
+var stackTraces = createStackTraces(timeline);
+var visibleStackTraces = new Set();
+var min = stackTraces.reduce(function (min, trace) { return Math.min(min, trace.from); }, Number.POSITIVE_INFINITY);
+var max = stackTraces.reduce(function (max, trace) { return Math.max(max, trace.to); }, Number.NEGATIVE_INFINITY);
+var left = min;
+var pixelPerMs = 0.0000001;
+var levelOfDetail = 0 /* High */;
+var debounceLODTimeout;
+function highLOD() {
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    levelOfDetail = 0 /* High */;
+    tracesDiv.style.pointerEvents = "auto";
+    updateStackTraces();
+}
+function lowLOD() {
+    levelOfDetail = 1 /* Low */;
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    debounceLODTimeout = setTimeout(highLOD, 1000);
+    tracesDiv.style.pointerEvents = "none";
+}
+function updateStackTraces() {
+    var windowWidth = window.innerWidth;
+    var right = left + (windowWidth / pixelPerMs);
+    var nextVisible = new Set();
+    var showTraces = levelOfDetail === 1 /* Low */ ? 64 : 512;
+    for (var i = 0; i < stackTraces.length && nextVisible.size < showTraces; i++) {
+        var trace = stackTraces[i];
+        trace.leftPx = (trace.from - left) * pixelPerMs;
+        trace.rightPx = (trace.to - left) * pixelPerMs;
+        if (trace.rightPx >= 0 && trace.leftPx <= windowWidth && (trace.rightPx - trace.leftPx >= 2)) {
+            nextVisible.add(trace);
+        }
+    }
+    visibleStackTraces.forEach(function (trace) {
+        if (nextVisible.has(trace)) {
+            return;
+        }
+        trace.div.style.visibility = "collapse";
+    });
+    nextVisible.forEach(function (trace) {
+        var div = trace.div, leftPx = trace.leftPx, rightPx = trace.rightPx;
+        div.style.left = Math.max(-5, leftPx) + "px";
+        div.style.right = Math.max(-5, windowWidth - rightPx) + "px";
+        if (!visibleStackTraces.has(trace)) {
+            div.style.visibility = "visible";
+        }
+    });
+    visibleStackTraces = nextVisible;
+}
+function snap(px) {
+    return Math.floor(px) + 0.5;
+}
+function redrawBackground() {
+    rulerBackgroundPatternContext.fillStyle = "#DDD";
+    rulerBackgroundPatternContext.fillRect(0, 0, rulerBackgroundPattern.width, rulerBackgroundPattern.height);
+    timelineBackgroundPatternContext.fillStyle = "#FFF";
+    timelineBackgroundPatternContext.fillRect(0, 0, timelineBackgroundPattern.width, timelineBackgroundPattern.height);
+    rulerBackgroundPatternContext.lineWidth = 1;
+    rulerBackgroundPatternContext.strokeStyle = "#BBB";
+    rulerBackgroundPatternContext.beginPath();
+    rulerBackgroundPatternContext.moveTo(snap(0), 0);
+    rulerBackgroundPatternContext.lineTo(snap(0), rulerBackgroundPattern.height);
+    rulerBackgroundPatternContext.stroke();
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(snap(0), 0);
+    timelineBackgroundPatternContext.lineTo(snap(0), timelineBackgroundPattern.height);
+    timelineBackgroundPatternContext.stroke();
+    // timeline horizontal lines
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(0, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.lineTo(timelineBackgroundPattern.width, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.stroke();
+    rulerBackgroundPatternContext.strokeStyle = "#CCC";
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    for (var i = 1; i < 10; i++) {
+        var x = rulerBackgroundPattern.width / 1000 * i * 100;
+        rulerBackgroundPatternContext.beginPath();
+        rulerBackgroundPatternContext.moveTo(snap(x), rulerBackgroundPattern.height - rulerBackgroundPattern.height * 0.25);
+        rulerBackgroundPatternContext.lineTo(snap(x), rulerBackgroundPattern.height);
+        rulerBackgroundPatternContext.stroke();
+        timelineBackgroundPatternContext.beginPath();
+        timelineBackgroundPatternContext.moveTo(snap(x), 0);
+        timelineBackgroundPatternContext.lineTo(snap(x), timelineBackgroundPattern.height);
+        timelineBackgroundPatternContext.stroke();
+    }
+    var rulerOffset = -Math.round((left - Math.floor(left / 1000) * 1000) * pixelPerMs);
+    var rulerPattern = context2d.createPattern(rulerBackgroundPattern, "repeat");
+    context2d.fillStyle = rulerPattern;
+    context2d.translate(rulerOffset, 0);
+    context2d.fillRect(-rulerOffset, 0, background.width, 30);
+    context2d.translate(-rulerOffset, 0);
+    var timelinePattern = context2d.createPattern(timelineBackgroundPattern, "repeat");
+    context2d.fillStyle = timelinePattern;
+    context2d.translate(rulerOffset, 31);
+    context2d.fillRect(-rulerOffset, 0, background.width, background.height - 30);
+    context2d.translate(-rulerOffset, -31);
+    // Separators
+    context2d.lineWidth = 1;
+    context2d.strokeStyle = "#666";
+    context2d.beginPath();
+    context2d.moveTo(0, snap(30));
+    context2d.lineTo(background.width, snap(30));
+    context2d.stroke();
+}
+function resize() {
+    background.width = window.innerWidth;
+    background.height = window.innerHeight;
+}
+function resizeRulers() {
+    // Lets try major rules on seconds and minor rules on 100ms.
+    var width = 1000 * pixelPerMs;
+    rulerBackgroundPattern.width = width;
+    rulerBackgroundPattern.height = 30;
+    timelineBackgroundPattern.width = width;
+    timelineBackgroundPattern.height = 21;
+}
+function clampViewPort() {
+    pixelPerMs = Math.max(window.innerWidth / (max - min), pixelPerMs);
+    left = Math.min(Math.max(min, left), max - window.innerWidth / pixelPerMs);
+}
+function focusTrace(ev) {
+    if (suspendClicks) {
+        return;
+    }
+    var trace = this.trace;
+    pixelPerMs = window.innerWidth / (trace.to - trace.from);
+    left = trace.from;
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+}
+window.addEventListener("resize", function () {
+    resize();
+    resizeRulers();
+    clampViewPort();
+    updateStackTraces();
+    redrawBackground();
+});
+window.addEventListener("mousewheel", function (e) {
+    var mousePoint = left + e.clientX / pixelPerMs;
+    pixelPerMs = Math.pow(2, Math.log2(pixelPerMs) + Math.max(-0.25, Math.min(0.25, e.wheelDelta)));
+    left = mousePoint - e.clientX / pixelPerMs;
+    lowLOD();
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+});
+var dragging = false;
+var suspendClicks = false;
+var mouseDown = false;
+var dragOriginXms; // The millisecond at which the chart was grabbed
+var dragOriginXpx;
+window.addEventListener("mousedown", function (e) {
+    dragOriginXms = left + e.clientX / pixelPerMs;
+    dragOriginXpx = e.clientX;
+    mouseDown = true;
+}, true);
+window.addEventListener("mouseup", function (e) {
+    if (dragging) {
+        dragging = false;
+        // Cant find a way to prevent the click action
+        suspendClicks = true;
+        setTimeout(function () { return suspendClicks = false; }, 1);
+    }
+    mouseDown = false;
+});
+window.addEventListener("mousemove", function (e) {
+    if (mouseDown && !dragging && Math.abs(e.clientX - dragOriginXpx) > 8) {
+        dragging = true;
+    }
+    if (dragging) {
+        left = dragOriginXms - e.clientX / pixelPerMs;
+        lowLOD();
+        clampViewPort();
+        redrawBackground();
+        updateStackTraces();
+    }
+});
+clampViewPort();
+resize();
+resizeRulers();
+redrawBackground();
+updateStackTraces();
+
+  </script>
+</body>
+</html>
