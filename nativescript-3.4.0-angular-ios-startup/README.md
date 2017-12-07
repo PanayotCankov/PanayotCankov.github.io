@@ -22,9 +22,9 @@ Here is how it looks, see the white page blinking between the {N} logo and the m
 ## Perf 3.4
 With the nativescript-angular v3.4 we will drain the microtasks in the nativescript-zone in the UIViewController's viewWillAppear, having angular create the whole UI synchronously. iOS will happily render it all before the launch-screen to home component animation is played leading to the following times:
 
-![times-ios-ng-v33](./reports/times-ios-ng-v34.png)
+![times-ios-ng-v34](./reports/times-ios-ng-v34.png)
 
-[times-ios-ng-v33.html](./reports/times-ios-ng-v34.html)
+[times-ios-ng-v34.html](./reports/times-ios-ng-v34.html)
 
 You have probably noted the big chunk of CSS parsing actually moved into the vendor, it will be captured in the android snapshot now. For iOS you can [contribute to the extra fast JavaScript CSS spec complying parser here](https://github.com/nativeScript/css-parser), it aims to be two times faster than rework in Android and about four times faster on JSC in iOS, but we will measure it precisely when it is done.
 
@@ -32,6 +32,6 @@ Still, the startup is good enough, we can now follow the design guidelines of [H
 ![ios-ng-v34.gif](./videos/ios-ng-v34.gif)
 
 Now go make your apps awesome,
-I can't wait to give you the {N} v4.4!
+I can't wait to give you the {N} v3.4!
 
 {% include disqus.html %}
