@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+    <title>Panayot Cankov's RSS Feed on NativeScript development</title>
+    <link>//panayotcankov.github.io/</link>
+    <description>NativeScript deep dive and future plans shared</description>
+
+    <item>
+        <title>{N} 3.1.0: Performance Improvements and Timeline Introduction</title>
+        <link>https://panayotcankov.github.io/nativescript-3.1.0-timeline/</link>
+        <guid>https://panayotcankov.github.io/nativescript-3.1.0-timeline/</guid>
+        <pubDate>1 July 2017</pubDate>
+        <description>[CDATA[Performance has been a high priority feature in {N} all along its development. During the course of development we found ourselves manually instrumenting all of the Objective-C, Java, C, C++ and the JavaScript code several times, but so far these profile traces were kept for internal use only and never made it to the "master".]]</description>
+    </item>
+
+    <item>
+        <title>{N} 3.2.0: Memory Management</title>
+        <link>https://panayotcankov.github.io/nativescript-3.2.0-memory-management/</link>
+        <guid>https://panayotcankov.github.io/nativescript-3.2.0-memory-management/</guid>
+        <pubDate>1 Aug 2017</pubDate>
+        <description>[CDATA[NativeScript binds very small JavaScript instances to the native instances. These let developers access and consume the native APIs from JavaScript. Here is explained the life cycle of a JavaScript and a native instance pair.]]</description>
+    </item>
+</channel>
